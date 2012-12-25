@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>IvmpDotNetWrapper</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="squirrel\sqarray.h" />
+    <ClInclude Include="squirrel\sqclass.h" />
+    <ClInclude Include="squirrel\sqclosure.h" />
+    <ClInclude Include="squirrel\sqcompiler.h" />
+    <ClInclude Include="squirrel\sqfuncproto.h" />
+    <ClInclude Include="squirrel\sqfuncstate.h" />
+    <ClInclude Include="squirrel\sqlexer.h" />
+    <ClInclude Include="squirrel\sqobject.h" />
+    <ClInclude Include="squirrel\sqopcodes.h" />
+    <ClInclude Include="squirrel\sqpcheader.h" />
+    <ClInclude Include="squirrel\sqstate.h" />
+    <ClInclude Include="squirrel\sqstdaux.h" />
+    <ClInclude Include="squirrel\sqstdblob.h" />
+    <ClInclude Include="squirrel\sqstdblobimpl.h" />
+    <ClInclude Include="squirrel\sqstdio.h" />
+    <ClInclude Include="squirrel\sqstdmath.h" />
+    <ClInclude Include="squirrel\sqstdstream.h" />
+    <ClInclude Include="squirrel\sqstdstring.h" />
+    <ClInclude Include="squirrel\sqstdsystem.h" />
+    <ClInclude Include="squirrel\sqstring.h" />
+    <ClInclude Include="squirrel\sqtable.h" />
+    <ClInclude Include="squirrel\squirrel.h" />
+    <ClInclude Include="squirrel\squserdata.h" />
+    <ClInclude Include="squirrel\squtils.h" />
+    <ClInclude Include="squirrel\sqvm.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="squirrel\sqapi.cpp" />
+    <ClCompile Include="squirrel\sqbaselib.cpp" />
+    <ClCompile Include="squirrel\sqclass.cpp" />
+    <ClCompile Include="squirrel\sqcompiler.cpp" />
+    <ClCompile Include="squirrel\sqdebug.cpp" />
+    <ClCompile Include="squirrel\sqfuncstate.cpp" />
+    <ClCompile Include="squirrel\sqlexer.cpp" />
+    <ClCompile Include="squirrel\sqmem.cpp" />
+    <ClCompile Include="squirrel\sqobject.cpp" />
+    <ClCompile Include="squirrel\sqstate.cpp" />
+    <ClCompile Include="squirrel\sqstdaux.cpp" />
+    <ClCompile Include="squirrel\sqstdblob.cpp" />
+    <ClCompile Include="squirrel\sqstdmath.cpp" />
+    <ClCompile Include="squirrel\sqstdrex.cpp" />
+    <ClCompile Include="squirrel\sqstdstream.cpp" />
+    <ClCompile Include="squirrel\sqstdstring.cpp" />
+    <ClCompile Include="squirrel\sqtable.cpp" />
+    <ClCompile Include="squirrel\sqvm.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+    <None Include="squirrel\makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IvmpDotNet\IvmpDotNet.csproj">
+      <Project>{a9b0cfbd-67d4-427d-9b5c-111350f8bc3d}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

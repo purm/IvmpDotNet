@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet", "IvmpDotNet\IvmpDotNet.csproj", "{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IvmpDotNetWrapper", "IvmpDotNetWrapper\IvmpDotNetWrapper.vcxproj", "{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}"
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "svr\ivmp-svr.exe", "{30E72F24-2F8C-4753-A90C-10287F7028B2}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = D:\Projekte\IvmpDotNet\svr\ivmp-svr.exe
+		RemoteMachine = LIMA
+		StartingDirectory = D:\Projekte\IvmpDotNet\svr
+		Environment = Standard
+		LaunchingEngine = 92ef0900-2251-11d2-b72e-0000f87572ef
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|Win32.ActiveCfg = Release|Any CPU
+		{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}.Release|x86.ActiveCfg = Release|Any CPU
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|Win32.Build.0 = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Debug|x86.ActiveCfg = Debug|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Any CPU.ActiveCfg = Release|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Win32.ActiveCfg = Release|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Win32.Build.0 = Release|Win32
+		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|x86.ActiveCfg = Release|Win32
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Win32.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|x86.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Any CPU.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Mixed Platforms.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Win32.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|x86.ActiveCfg = Debug|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
