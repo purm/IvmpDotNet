@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Quelldateien\Squirrel">
-      <UniqueIdentifier>{8c9b14a0-0ec1-4737-8d84-56b3d9dd9d47}</UniqueIdentifier>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{0a5403c6-23b2-4ea5-98cd-7a3f4bdfe8a6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Squirrel">
-      <UniqueIdentifier>{119d7b72-b3ae-4b32-a6a9-adbe16f9f283}</UniqueIdentifier>
+    <Filter Include="SDK\Interfaces">
+      <UniqueIdentifier>{317ca475-539a-4f03-be40-499a423961d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,80 +27,59 @@
     <ClInclude Include="resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqarray.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\SDK.h">
+      <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqvm.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CActorManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqclass.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CBlipManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqclosure.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CCheckpointManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqcompiler.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CEventsInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqfuncproto.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CModuleInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqfuncstate.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CModuleManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqlexer.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CNetworkManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqobject.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CObjectManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqopcodes.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CPickupManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqpcheader.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CPlayerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstate.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CPlayerManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdaux.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CScriptingManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdblob.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CSquirrelInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdblobimpl.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CTimeInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdio.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CTrafficLightsInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdmath.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CVehicleInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="squirrel\sqstdstream.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\sqstdstring.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\sqstdsystem.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\sqstring.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\sqtable.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\squirrel.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\squserdata.h">
-      <Filter>Headerdateien\Squirrel</Filter>
-    </ClInclude>
-    <ClInclude Include="squirrel\squtils.h">
-      <Filter>Headerdateien\Squirrel</Filter>
+    <ClInclude Include="SDK\Interfaces\CVehicleManagerInterface.h">
+      <Filter>SDK\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,60 +91,6 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqapi.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqvm.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqbaselib.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqclass.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqcompiler.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqdebug.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqfuncstate.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqlexer.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqmem.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqobject.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstate.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdaux.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdblob.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdmath.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdrex.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdstream.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqstdstring.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
-    </ClCompile>
-    <ClCompile Include="squirrel\sqtable.cpp">
-      <Filter>Quelldateien\Squirrel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

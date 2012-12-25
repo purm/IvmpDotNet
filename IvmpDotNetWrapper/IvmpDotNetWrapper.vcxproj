@@ -41,9 +41,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -85,54 +87,29 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="squirrel\sqarray.h" />
-    <ClInclude Include="squirrel\sqclass.h" />
-    <ClInclude Include="squirrel\sqclosure.h" />
-    <ClInclude Include="squirrel\sqcompiler.h" />
-    <ClInclude Include="squirrel\sqfuncproto.h" />
-    <ClInclude Include="squirrel\sqfuncstate.h" />
-    <ClInclude Include="squirrel\sqlexer.h" />
-    <ClInclude Include="squirrel\sqobject.h" />
-    <ClInclude Include="squirrel\sqopcodes.h" />
-    <ClInclude Include="squirrel\sqpcheader.h" />
-    <ClInclude Include="squirrel\sqstate.h" />
-    <ClInclude Include="squirrel\sqstdaux.h" />
-    <ClInclude Include="squirrel\sqstdblob.h" />
-    <ClInclude Include="squirrel\sqstdblobimpl.h" />
-    <ClInclude Include="squirrel\sqstdio.h" />
-    <ClInclude Include="squirrel\sqstdmath.h" />
-    <ClInclude Include="squirrel\sqstdstream.h" />
-    <ClInclude Include="squirrel\sqstdstring.h" />
-    <ClInclude Include="squirrel\sqstdsystem.h" />
-    <ClInclude Include="squirrel\sqstring.h" />
-    <ClInclude Include="squirrel\sqtable.h" />
-    <ClInclude Include="squirrel\squirrel.h" />
-    <ClInclude Include="squirrel\squserdata.h" />
-    <ClInclude Include="squirrel\squtils.h" />
-    <ClInclude Include="squirrel\sqvm.h" />
+    <ClInclude Include="SDK\Interfaces\CActorManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CBlipManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CCheckpointManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CEventsInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CModuleInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CModuleManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CNetworkManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CObjectManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CPickupManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CPlayerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CPlayerManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CScriptingManagerInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CSquirrelInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CTimeInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CTrafficLightsInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CVehicleInterface.h" />
+    <ClInclude Include="SDK\Interfaces\CVehicleManagerInterface.h" />
+    <ClInclude Include="SDK\SDK.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="squirrel\sqapi.cpp" />
-    <ClCompile Include="squirrel\sqbaselib.cpp" />
-    <ClCompile Include="squirrel\sqclass.cpp" />
-    <ClCompile Include="squirrel\sqcompiler.cpp" />
-    <ClCompile Include="squirrel\sqdebug.cpp" />
-    <ClCompile Include="squirrel\sqfuncstate.cpp" />
-    <ClCompile Include="squirrel\sqlexer.cpp" />
-    <ClCompile Include="squirrel\sqmem.cpp" />
-    <ClCompile Include="squirrel\sqobject.cpp" />
-    <ClCompile Include="squirrel\sqstate.cpp" />
-    <ClCompile Include="squirrel\sqstdaux.cpp" />
-    <ClCompile Include="squirrel\sqstdblob.cpp" />
-    <ClCompile Include="squirrel\sqstdmath.cpp" />
-    <ClCompile Include="squirrel\sqstdrex.cpp" />
-    <ClCompile Include="squirrel\sqstdstream.cpp" />
-    <ClCompile Include="squirrel\sqstdstring.cpp" />
-    <ClCompile Include="squirrel\sqtable.cpp" />
-    <ClCompile Include="squirrel\sqvm.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
