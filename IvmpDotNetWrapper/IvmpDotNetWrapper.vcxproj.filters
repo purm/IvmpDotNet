@@ -16,6 +16,9 @@
     <Filter Include="SDK">
       <UniqueIdentifier>{c57d781c-4ad4-43b9-b2a2-8696c4a88253}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Quelldateien\Exports">
+      <UniqueIdentifier>{fa1d8ae6-23b8-4134-8d47-5cb308e28a21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stdafx.h">
@@ -62,13 +65,27 @@
     <ClCompile Include="SDK\SDK.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
+    <ClCompile Include="Vehicles.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Actors.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Blips.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkpoints.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
     <None Include="app.ico">
       <Filter>Ressourcendateien</Filter>
     </None>
-    <None Include="squirrel\makefile" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">

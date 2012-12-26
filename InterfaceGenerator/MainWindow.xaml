@@ -5,15 +5,24 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Ergebnisse der Suche:" />
-        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="inputTxt" Grid.Row="1" />
-        <TextBlock Grid.Row="2" Text="SDK.cs" />
-        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="outputTxt" Grid.Row="3"/>
-        <Button Grid.Row="4" Click="Button_Click">Go</Button>
+        <DockPanel>
+            <TextBlock Margin="2" DockPanel.Dock="Left" Text="Klassenname:" />
+            <TextBox Margin="2" Name="txtClassName" />
+        </DockPanel>
+        <TextBlock Grid.Row="1" Text="Virtuelle Funktionen:" Margin="2" />
+        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="inputTxt" Grid.Row="2" Margin="2" />
+        <TextBlock Grid.Row="3" Text="C++" Margin="2" />
+        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="cppOutput" Grid.Row="4" Margin="2"/>
+        <TextBlock Grid.Row="5" Text="C#" Margin="2" />
+        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="csOutput" Grid.Row="6" Margin="2"/>
+        <Button Grid.Row="7" Click="Button_Click" Margin="2">Go</Button>
     </Grid>
 </Window>

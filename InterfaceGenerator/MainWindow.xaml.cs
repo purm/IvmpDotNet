@@ -14,10 +14,51 @@ using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
 namespace InterfaceGenerator {
-    public class MethodInfo {
-        public string Name { get; set; }
-        public int ParameterCount { get; set; }
-        public string Parameters { get; set; }
+    static class NativeToCLRType {
+        public static string Convert(string nativeType) {
+            string str = nativeType.ToLower().Replace(" ", "");
+            switch (str) {
+                case "void":
+                    return "void";
+                case "constchar*":
+                case "char*":
+                case "wchar_t*":
+                case "constwchar_t*":
+                    return "String";
+                case "float":
+                    return "Single";
+                case "double":
+                    return "double";
+                case "bool":
+                    return "Boolean";
+                case "void*":
+                    return "IntPtr";
+                case "unsignedchar":
+                    return "Byte";
+                case "short":
+                    return "Int16";
+                case "unsignedshort":
+                    return "UInt16";
+                case "unsignedlong":
+                case "unsignedint":
+                    return "UInt32";
+                case "int":
+                case "long":
+                    return "Int32";
+                case "char":
+                case "wchar_t":
+                    return "char";
+                case "cvector3":
+                    return "CVector3";
+                case "entityid":
+                    return "ushort";
+                case "int*":
+                case "byte*":
+                    return "IntPtr";
+            }
+
+            throw new ArgumentException();
+        }
     }
 
     /// <summary>
@@ -30,58 +71,72 @@ namespace InterfaceGenerator {
 
         private void Button_Click(object sender, RoutedEventArgs e) {
             string input = inputTxt.Text;
-            StringBuilder outputBuilder = new StringBuilder();
+            string className = txtClassName.Text;
+            StringBuilder cppOutputBuilder = new StringBuilder();
+            StringBuilder csOutputBuilder = new StringBuilder();
             string[] lines = input.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
-            Dictionary<string, List<MethodInfo>> methods = new Dictionary<string, List<MethodInfo>>();
 
-            outputBuilder.AppendLine("namespace IvmpDotNet.Sdk {");
+            cppOutputBuilder.AppendLine("#include \"SDK\\SDK.h\"");
+            cppOutputBuilder.AppendLine();
+
+            csOutputBuilder.AppendLine("using System;");
+            csOutputBuilder.AppendLine("using System.Collections.Generic;");
+            csOutputBuilder.AppendLine("using System.Linq;");
+            csOutputBuilder.AppendLine("using System.Runtime.InteropServices;");
+            csOutputBuilder.AppendLine("using System.Text;");
+            csOutputBuilder.AppendLine();
+            csOutputBuilder.AppendLine("namespace IvmpDotNet.Imports {");
+            csOutputBuilder.AppendLine(string.Format("\tpublic static class {0} {{", className));
 
             foreach (string line in lines) {
-                Match m = Regex.Match(line, Properties.Resources.ParsingPattern);
-                if (m.Success) {
-                    List<MethodInfo> methodList;
-                    if (!methods.TryGetValue(m.Groups[1].Value, out methodList))
-                        methods.Add(m.Groups[1].Value, methodList = new List<MethodInfo>());
+                Match match = Regex.Match(line, Properties.Resources.ParsingPattern);
+                if (match.Success) {
+                    string returnType = match.Groups[1].Value;
+                    string methodName = match.Groups[2].Value;
+                    string parameters = match.Groups[3].Value;
+                    cppOutputBuilder.AppendLine(string.Format("EXPORT {0} {1}_{2}({3}) {{", returnType, className, methodName, parameters));
 
-                    methods[m.Groups[1].Value].Add(new MethodInfo() {
-                        Name = m.Groups[2].Value,
-                        ParameterCount = Convert.ToInt32(m.Groups[3].Value),
-                        Parameters = m.Groups[4].Value
-                    });
-                }
-            }
+                    if (returnType != "void")
+                        cppOutputBuilder.Append("\treturn ");
+                    else
+                        cppOutputBuilder.Append("\t");
 
-            foreach (KeyValuePair<string, List<MethodInfo>> methodGroup in methods) {
-                outputBuilder.AppendLine(string.Format("\tpublic interface {0} {{", methodGroup.Key));
+                    string paramString = string.Empty;
+                    string csParamstring = string.Empty;
+                    string[] splitted = parameters.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                    int i = 0;
+                    foreach (string param in splitted) {
+                        Match subMatch = Regex.Match(param, @"((.*)\s)?(\S+)$");
+                        paramString += subMatch.Groups[3].Value;
+                        csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + subMatch.Groups[3].Value;
 
-                foreach (MethodInfo method in methodGroup.Value) {
-                    StringBuilder paramStringBuilder = new StringBuilder();
-                    int paramCount = 1;
-                    foreach (char param in method.Parameters) {
-                        switch (param) {
-                            case 'f':
-                                paramStringBuilder.Append("float");
-                                break;
+                        if (i + 1 < splitted.Length) {
+                            paramString += ", ";
+                            csParamstring += ", ";
                         }
 
-                        paramStringBuilder.Append(string.Format("param{0}", paramCount));
-
-                        if (method.Parameters.Length > paramCount)
-                            paramStringBuilder.Append(", ");
-
-                        paramCount++;
+                        i++;
                     }
 
-                    outputBuilder.AppendLine(string.Format("\t\tobject {0}({1});", method.Name, paramStringBuilder.ToString()));
-                }
+                    cppOutputBuilder.AppendLine(string.Format("IVMP::{0}()->{1}({2});", className, methodName, paramString));
+                    cppOutputBuilder.AppendLine("}");
+                    cppOutputBuilder.AppendLine();
 
-                outputBuilder.AppendLine("\t}");
-                outputBuilder.AppendLine();
+                    csOutputBuilder.AppendLine("\t\t[DllImport(\"IvmpDotNetWrapper.dll\", CallingConvention = CallingConvention.Cdecl)]");
+                    csOutputBuilder.AppendLine(string.Format("\t\tpublic static extern {0} {1}_{2}({3});", NativeToCLRType.Convert(returnType), className, methodName, csParamstring));
+                    csOutputBuilder.AppendLine();
+                    /*
+                    EXPORT unsigned int Server_GetTickCount() {
+	                    return IVMP::Server()->GetTickCount();
+                    }*/
+                }
             }
 
-            outputBuilder.AppendLine("}");
+            csOutputBuilder.AppendLine("\t}");
+            csOutputBuilder.AppendLine("}");
 
-            outputTxt.Text = outputBuilder.ToString();
+            cppOutput.Text = cppOutputBuilder.ToString();
+            csOutput.Text = csOutputBuilder.ToString();
         }
     }
 }

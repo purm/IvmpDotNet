@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Imports\Checkpoints.cs" />
+    <Compile Include="Imports\Actors.cs" />
+    <Compile Include="Imports\Blips.cs" />
+    <Compile Include="Imports\Common.cs" />
+    <Compile Include="Imports\Server.cs" />
+    <Compile Include="Imports\Vehicles.cs" />
     <Compile Include="IvmpDotNet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

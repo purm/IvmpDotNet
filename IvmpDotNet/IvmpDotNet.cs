@@ -5,17 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 
 namespace IvmpDotNet {
-    public delegate void CallingFunctionEventHandler(object sender, CallingFunctionEventArgs e);
-
-    public class CallingFunctionEventArgs : EventArgs {
-        public string FunctionName { get; set; }
-        public List<object> Parameters { get; set; }
-        public object ReturnValue { get; set; }
-    }
-
     public class IvmpDotNet {
-        public event CallingFunctionEventHandler CallingFunction;
-
         public static readonly string ModuleName = "CLR Host";
 
         private static object _singletonMutex = new object();
@@ -35,18 +25,24 @@ namespace IvmpDotNet {
             moduleName = ModuleName;
 
             Console.WriteLine("[{0}] InitModule", ModuleName);
+            //string name = Imports.Server.Server_GetWeaponName(5);
+            //Imports.Server.Server_Log("YOU CHANGED THE WAY! - " + name);
+
+            ushort id = (ushort)Imports.Vehicles.Vehicles_Create(40, new Imports.CVector3() { fX = 1657.118408f, fY = 421.462982f, fZ = 28.569500f }, new Imports.CVector3() { fX = 359.828613f, fY = 352.884033f, fZ = 267.583008f }, 0, 0, 0, 0, -1);
+            Console.WriteLine("VehicleID: {0}", id);
+
+            Imports.CVector3 coords = Imports.Vehicles.Vehicles_GetCoordinates(id);
+            Console.WriteLine("{0} - {1} - {2}", coords.fX, coords.fY, coords.fZ);
 
             return true;
         }
 
         public void ScriptLoad() {
-            Console.WriteLine("[{0}] ScriptLoad", ModuleName);
+            //Console.WriteLine("[{0}] ScriptLoad", ModuleName);
         }
 
         public void Pulse() {
             //Console.WriteLine("[{0}] Pulse", ModuleName);
-
-            CallSquirrelFunction("log", new List<object>() { "HELLO IM LOGGING YEAYHH" });
         }
 
         public void SetupFunctions() {
@@ -59,23 +55,6 @@ namespace IvmpDotNet {
 
         public void SetupNewInterfaces() {
             Console.WriteLine("[{0}] SetupNewInterfaces", ModuleName);
-        }
-
-        public object CallSquirrelFunction(string functionName, List<object> parameters) {
-            //Console.WriteLine("[{0}] CallSquirrelFunction {1}", ModuleName, functionName);
-
-            if (CallingFunction != null) {
-                var eArg = new CallingFunctionEventArgs() {
-                    FunctionName = functionName,
-                    Parameters = parameters
-                };
-
-                CallingFunction(this, eArg);
-
-                return eArg.ReturnValue;
-            }
-
-            return null;
         }
     }
 }

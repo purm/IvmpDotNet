@@ -8,11 +8,6 @@ InterfaceContainer_t InterfaceContainer;
 NewInterfaceContainer_t NewInterfaceContainer;
 FuncContainer_t FuncContainer;
 
-System::Void CallingFunction(System::Object ^source, IvmpDotNet::CallingFunctionEventArgs ^e) 
-{
-
-}
-
 EXPORT bool InitModule(char* szModuleName)
 {
 	System::String^ modName;
@@ -22,13 +17,6 @@ EXPORT bool InitModule(char* szModuleName)
 	const char* linkStr = static_cast<char*>(p.ToPointer());
 
 	strcpy(szModuleName, linkStr);
-
-	IvmpDotNet::IvmpDotNet::Singleton->CallingFunction += gcnew IvmpDotNet::CallingFunctionEventHandler(CallingFunction);
-	
-	int slts = IVMP::Server()->GetPlayerSlots();
-	int onlines = IVMP::Server()->GetPlayerCount();
-
-	LogPrintf("[%s] maximum players online: %i/%i", szModuleName, onlines, slts);
 
 	return res;
 }
