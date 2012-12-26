@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}</ProjectGuid>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>IvmpDotNetWrapper</RootNamespace>
   </PropertyGroup>
@@ -22,12 +22,14 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -41,11 +43,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK\Shared;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK\Shared;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -87,29 +89,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="SDK\Interfaces\CActorManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CBlipManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CCheckpointManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CEventsInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CModuleInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CModuleManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CNetworkManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CObjectManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CPickupManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CPlayerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CPlayerManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CScriptingManagerInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CSquirrelInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CTimeInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CTrafficLightsInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CVehicleInterface.h" />
-    <ClInclude Include="SDK\Interfaces\CVehicleManagerInterface.h" />
     <ClInclude Include="SDK\SDK.h" />
+    <ClInclude Include="SDK\Shared\Common.h" />
+    <ClInclude Include="SDK\Shared\CString.h" />
+    <ClInclude Include="SDK\Shared\Game\CControlState.h" />
+    <ClInclude Include="SDK\Shared\Network\CBitStream.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SDK\SDK.cpp" />
+    <ClCompile Include="SDK\Shared\CString.cpp" />
+    <ClCompile Include="SDK\Shared\Game\CControlState.cpp" />
+    <ClCompile Include="SDK\Shared\Network\CBitStream.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

@@ -2,13 +2,14 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "SDK\SDK.h"
+#include "SDK/SDK.h"
 
-FuncContainer_t FuncContainer;
 InterfaceContainer_t InterfaceContainer;
+NewInterfaceContainer_t NewInterfaceContainer;
+FuncContainer_t FuncContainer;
 
 System::Void CallingFunction(System::Object ^source, IvmpDotNet::CallingFunctionEventArgs ^e) 
-{ 
+{
 
 }
 
@@ -24,6 +25,11 @@ EXPORT bool InitModule(char* szModuleName)
 
 	IvmpDotNet::IvmpDotNet::Singleton->CallingFunction += gcnew IvmpDotNet::CallingFunctionEventHandler(CallingFunction);
 	
+	int slts = IVMP::Server()->GetPlayerSlots();
+	int onlines = IVMP::Server()->GetPlayerCount();
+
+	LogPrintf("[%s] maximum players online: %i/%i", szModuleName, onlines, slts);
+
 	return res;
 }
 
@@ -42,7 +48,7 @@ EXPORT void Pulse()
 	IvmpDotNet::IvmpDotNet::Singleton->Pulse();
 }
 
-EXPORT void SetupFunctions(FuncContainer_t * pContainer) {
+EXPORT void SetupFunctions(FuncContainer_t* pContainer) {
 	FuncContainer = *pContainer;
 
 	IvmpDotNet::IvmpDotNet::Singleton->SetupFunctions();
@@ -50,10 +56,12 @@ EXPORT void SetupFunctions(FuncContainer_t * pContainer) {
 
 EXPORT void SetupInterfaces(InterfaceContainer_t * pContainer) {
 	InterfaceContainer = *pContainer;
-	//InterfaceContainer.g_pVehicleManager->Add(65, CVector3(-343.447662f, 1176.119263f, 14.146016f), CVector3(0.0f, 0.0f, 268.219513f), 0, 0, 0, 0, 1);
+
 	IvmpDotNet::IvmpDotNet::Singleton->SetupInterfaces();
 }
 
-EXPORT void SetupNewInterfaces(void* v) {
+EXPORT void SetupNewInterfaces(NewInterfaceContainer_t * pContainer) {
+	NewInterfaceContainer = *pContainer;
+
 	IvmpDotNet::IvmpDotNet::Singleton->SetupNewInterfaces();
 }

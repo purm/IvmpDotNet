@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet", "IvmpDotNet\IvmpDotNet.csproj", "{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IvmpDotNetWrapper", "IvmpDotNetWrapper\IvmpDotNetWrapper.vcxproj", "{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}"
@@ -16,6 +16,8 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "svr\ivmp-svr.ex
 		LaunchSQLEngine = No
 		AttachLaunchAction = No
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceGenerator", "InterfaceGenerator\InterfaceGenerator.csproj", "{D42047BF-F9AB-477E-8468-51085CBF7E50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,14 +55,26 @@ Global
 		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Win32.ActiveCfg = Release|Win32
 		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|Win32.Build.0 = Release|Win32
 		{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}.Release|x86.ActiveCfg = Release|Win32
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Win32.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|x86.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Any CPU.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Mixed Platforms.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Win32.ActiveCfg = Debug|x86
-		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|x86.ActiveCfg = Debug|x86
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Any CPU.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|Win32.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Debug|x86.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Any CPU.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Mixed Platforms.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|Win32.ActiveCfg = Debug
+		{30E72F24-2F8C-4753-A90C-10287F7028B2}.Release|x86.ActiveCfg = Debug
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|Win32.ActiveCfg = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|x86.ActiveCfg = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Debug|x86.Build.0 = Debug|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|Any CPU.ActiveCfg = Release|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|Mixed Platforms.Build.0 = Release|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|Win32.ActiveCfg = Release|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|x86.ActiveCfg = Release|x86
+		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

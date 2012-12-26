@@ -14,10 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="SDK">
-      <UniqueIdentifier>{0a5403c6-23b2-4ea5-98cd-7a3f4bdfe8a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SDK\Interfaces">
-      <UniqueIdentifier>{317ca475-539a-4f03-be40-499a423961d8}</UniqueIdentifier>
+      <UniqueIdentifier>{c57d781c-4ad4-43b9-b2a2-8696c4a88253}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,59 +24,20 @@
     <ClInclude Include="resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\SDK.h">
+    <ClInclude Include="SDK\Shared\Network\CBitStream.h">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CActorManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
+    <ClInclude Include="SDK\Shared\Game\CControlState.h">
+      <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CBlipManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
+    <ClInclude Include="SDK\Shared\Common.h">
+      <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CCheckpointManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
+    <ClInclude Include="SDK\Shared\CString.h">
+      <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CEventsInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CModuleInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CModuleManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CNetworkManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CObjectManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CPickupManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CPlayerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CPlayerManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CScriptingManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CSquirrelInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CTimeInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CTrafficLightsInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CVehicleInterface.h">
-      <Filter>SDK\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\Interfaces\CVehicleManagerInterface.h">
-      <Filter>SDK\Interfaces</Filter>
+    <ClInclude Include="SDK\SDK.h">
+      <Filter>SDK</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +49,18 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Shared\Network\CBitStream.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Shared\Game\CControlState.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Shared\CString.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\SDK.cpp">
+      <Filter>SDK</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
