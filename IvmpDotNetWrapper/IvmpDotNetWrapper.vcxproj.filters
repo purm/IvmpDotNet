@@ -104,6 +104,9 @@
     <ClCompile Include="Hash.cpp">
       <Filter>Quelldateien\Exports</Filter>
     </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

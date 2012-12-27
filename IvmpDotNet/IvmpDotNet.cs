@@ -44,6 +44,7 @@ namespace IvmpDotNet {
         private ObjectManager _objectManager = new ObjectManager();
         private PickupManager _pickupManager = new PickupManager();
         private HashManager _hashManager = new HashManager();
+        private WorldManager _worldManager = new WorldManager();
 
         #endregion
 
@@ -134,6 +135,11 @@ namespace IvmpDotNet {
 
         SDK.IHashManager SDK.ICoreManager.HashManager {
             get { return _hashManager; }
+        }
+
+
+        SDK.IWorldManager SDK.ICoreManager.WorldManager {
+            get { return _worldManager; }
         }
     }
 }

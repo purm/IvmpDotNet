@@ -56,6 +56,7 @@
     <Compile Include="Imports\Scripts.cs" />
     <Compile Include="Imports\Server.cs" />
     <Compile Include="Imports\Vehicles.cs" />
+    <Compile Include="Imports\World.cs" />
     <Compile Include="IvmpDotNet.cs" />
     <Compile Include="Wrappings\Actor.cs" />
     <Compile Include="Wrappings\ActorManager.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Wrappings\ServerManager.cs" />
     <Compile Include="Wrappings\Vehicle.cs" />
     <Compile Include="Wrappings\VehicleManager.cs" />
+    <Compile Include="Wrappings\WorldManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IvmpDotNet.SDK\IvmpDotNet.SDK.csproj">

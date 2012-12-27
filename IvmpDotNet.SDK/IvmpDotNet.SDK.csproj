@@ -60,6 +60,7 @@
     <Compile Include="IServerManager.cs" />
     <Compile Include="IVehicle.cs" />
     <Compile Include="IVehicleManager.cs" />
+    <Compile Include="IWorldManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
