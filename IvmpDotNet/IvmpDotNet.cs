@@ -36,6 +36,8 @@ namespace IvmpDotNet {
         private PlayerManager _playerManager = new PlayerManager();
         private ServerManager _serverManager = new ServerManager();
         private ActorManager _actorManager = new ActorManager();
+        private BlipManager _blipManager = new BlipManager();
+        private CheckPointManager _checkpointManager = new CheckPointManager();
 
         #endregion
 
@@ -47,23 +49,6 @@ namespace IvmpDotNet {
             Console.WriteLine("[{0}] InitModule", ModuleName);
 
             CLRModuleLoader.LoadModules(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "CLRModules"));
-
-            //string name = Imports.Server.Server_GetWeaponName(5);
-            //Imports.Server.Server_Log("YOU CHANGED THE WAY! - " + name);
-
-            //ushort id = (ushort)Imports.Vehicles.Vehicles_Create(40, new Imports.CVector3() { X = 1657.118408f, Y = 421.462982f, Z = 28.569500f }, new Imports.CVector3() { X = 359.828613f, Y = 352.884033f, Z = 267.583008f }, 0, 0, 0, 0, -1);
-            //Console.WriteLine("VehicleID: {0}", id);
-
-            //Imports.CVector3 coords = Imports.Vehicles.Vehicles_GetCoordinates(id);
-            //Console.WriteLine("{0} - {1} - {2}", coords.X, coords.Y, coords.Z);
-
-            //Imports.Vehicles.Vehicles_SetLocked(id, 1);
-
-            //EventManager.PlayerSpawn += (o, e) => {
-            //    e.Player.GiveWeapon(11, 1337);
-            //};
-
-            //Imports.Server.Server_Log("asdf");
 
             return true;
         }
@@ -106,6 +91,15 @@ namespace IvmpDotNet {
 
         SDK.IActorManager SDK.ICoreManager.ActorManager {
             get { return _actorManager; }
+        }
+
+        SDK.IBlipManager SDK.ICoreManager.BlipManager {
+            get { return _blipManager; }
+        }
+
+
+        SDK.ICheckPointManager SDK.ICoreManager.CheckpointManager {
+            get { return _checkpointManager; }
         }
     }
 }

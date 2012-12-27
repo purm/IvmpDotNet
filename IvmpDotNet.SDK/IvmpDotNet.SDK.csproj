@@ -42,11 +42,17 @@
     <Compile Include="Common.cs" />
     <Compile Include="IActor.cs" />
     <Compile Include="IActorManager.cs" />
+    <Compile Include="IBlip.cs" />
+    <Compile Include="IBlipManager.cs" />
+    <Compile Include="ICheckPoint.cs" />
+    <Compile Include="ICheckPointManager.cs" />
     <Compile Include="ICoreManager.cs" />
     <Compile Include="IEvents.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="IPlayerManager.cs" />
     <Compile Include="IServerManager.cs" />
+    <Compile Include="IVehicle.cs" />
+    <Compile Include="IVehicleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

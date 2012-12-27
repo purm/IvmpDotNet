@@ -10,5 +10,8 @@ namespace IvmpDotNet.SDK {
         IPlayerManager PlayerManager { get; }
         IServerManager ServerManager { get; }
         IActorManager ActorManager { get; }
+        IBlipManager BlipManager { get; }
+        ICheckPointManager CheckpointManager { get; }
+        IVehicleManager VehicleManager { get; }
     }
 }

@@ -29,7 +29,7 @@ namespace IvmpDotNet.Imports {
         public static extern Boolean Blips_SetSize(ushort blipId, Single fSize, ushort playerId);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr Blips_GetSize(ushort blipId);
+        public static extern Single Blips_GetSize(ushort blipId);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern Boolean Blips_ToggleShortRange(ushort blipId, Boolean bToggle, ushort playerId);

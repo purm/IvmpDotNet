@@ -356,5 +356,22 @@ namespace IvmpDotNet.Wrappings {
         public bool Ban(uint uiSeconds) {
             return Players.Players_Ban(PlayerId, uiSeconds);
         }
+
+
+        public bool CreatePlayerBlip(int iSprite) {
+            return Blips.Blips_CreatePlayerBlip(PlayerId, iSprite);
+        }
+
+        public bool DeletePlayerBlip() {
+            return Blips.Blips_DeletePlayerBlip(PlayerId);
+        }
+
+        public bool TogglePlayerBlipDisplay(bool bToggle) {
+            return Blips.Blips_TogglePlayerBlipDisplay(PlayerId, bToggle);
+        }
+
+        public bool TogglePlayerShortRange(bool bToggle) {
+            return Blips.Blips_TogglePlayerShortRange(PlayerId, bToggle);
+        }
     }
 }

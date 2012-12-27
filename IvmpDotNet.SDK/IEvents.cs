@@ -18,6 +18,5 @@ namespace IvmpDotNet.SDK {
         event EventHandler<ConsoleEventArgs> ConsoleInput;
         event EventHandler<ConsoleEventArgs> ConsoleOutput;
         event EventHandler<PlayerEventArgs> PlayerSpawn;
-
     }
 }

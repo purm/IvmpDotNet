@@ -81,5 +81,10 @@ namespace IvmpDotNet.SDK {
         bool SendMessage(String szMessage, Int32 iColor, Boolean sqbAllowFormatting);
         bool Kick(Boolean sqbKickMessage);
         bool Ban(UInt32 uiSeconds);
+
+        bool CreatePlayerBlip(Int32 iSprite);
+        bool DeletePlayerBlip();
+        bool TogglePlayerBlipDisplay(Boolean bToggle);
+        bool TogglePlayerShortRange(Boolean bToggle);
     }
 }

@@ -54,6 +54,10 @@
     <Compile Include="IvmpDotNet.cs" />
     <Compile Include="Wrappings\Actor.cs" />
     <Compile Include="Wrappings\ActorManager.cs" />
+    <Compile Include="Wrappings\Blip.cs" />
+    <Compile Include="Wrappings\BlipManager.cs" />
+    <Compile Include="Wrappings\CheckPoint.cs" />
+    <Compile Include="Wrappings\CheckPointManager.cs" />
     <Compile Include="Wrappings\PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappings\Player.cs" />
