@@ -15,5 +15,8 @@ namespace IvmpDotNet.SDK {
         IVehicleManager VehicleManager { get; }
         IScriptManager ScriptManager { get; }
         IAreaManager AreaManager { get; }
+        IObjectManager ObjectManager { get; }
+        IPickupManager PickupManager { get; }
+        IHashManager HashManager { get; }
     }
 }

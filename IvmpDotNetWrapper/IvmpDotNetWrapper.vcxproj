@@ -104,7 +104,10 @@
     <ClCompile Include="Blips.cpp" />
     <ClCompile Include="Checkpoints.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Hash.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Objects.cpp" />
+    <ClCompile Include="Pickups.cpp" />
     <ClCompile Include="Players.cpp" />
     <ClCompile Include="Scripts.cpp" />
     <ClCompile Include="SDK\SDK.cpp" />

@@ -95,6 +95,15 @@
     <ClCompile Include="Area.cpp">
       <Filter>Quelldateien\Exports</Filter>
     </ClCompile>
+    <ClCompile Include="Objects.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Pickups.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Hash.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

@@ -18,13 +18,19 @@ namespace IvmpDotNet.SampleCLRModule {
                 foreach (string cmd in e.Command) {
                     e.Player.SendMessage("ASDF: " + cmd, 0, false);
                 }
+
                 if (e.Command[0] == "/asdf") {
                     e.Player.SendMessage("You entered valid message", 0, false);
                     e.Player.GiveWeapon(18, 1337);
+                } else if (e.Command[0] == "/test") {
+                   var obj = mgr.ObjectManager.Create(2627789200, e.Player.Coordinates, new SDK.CVector3());
+                   obj.AttachToPlayer(e.Player, e.Player.Coordinates, new SDK.CVector3(), -1);
                 } else {
                     e.Player.SendMessage("You entered Invalid Message", 0, false);
-                }
+                } 
             };
+
+            
 
             mgr.VehicleManager.Create(
                 40,

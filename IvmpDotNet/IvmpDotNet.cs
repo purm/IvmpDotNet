@@ -41,6 +41,9 @@ namespace IvmpDotNet {
         private VehicleManager _vehicleManager = new VehicleManager();
         private ScriptManager _scriptManager = new ScriptManager();
         private AreaManager _areaManager = new AreaManager();
+        private ObjectManager _objectManager = new ObjectManager();
+        private PickupManager _pickupManager = new PickupManager();
+        private HashManager _hashManager = new HashManager();
 
         #endregion
 
@@ -116,6 +119,21 @@ namespace IvmpDotNet {
 
         SDK.IAreaManager SDK.ICoreManager.AreaManager {
             get { return _areaManager; }
+        }
+
+
+        SDK.IObjectManager SDK.ICoreManager.ObjectManager {
+            get { return _objectManager; }
+        }
+
+
+        SDK.IPickupManager SDK.ICoreManager.PickupManager {
+            get { return _pickupManager; }
+        }
+
+
+        SDK.IHashManager SDK.ICoreManager.HashManager {
+            get { return _hashManager; }
         }
     }
 }

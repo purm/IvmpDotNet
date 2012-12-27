@@ -49,6 +49,9 @@
     <Compile Include="Imports\Checkpoints.cs" />
     <Compile Include="Imports\Actors.cs" />
     <Compile Include="Imports\Blips.cs" />
+    <Compile Include="Imports\Hash.cs" />
+    <Compile Include="Imports\Objects.cs" />
+    <Compile Include="Imports\Pickups.cs" />
     <Compile Include="Imports\Players.cs" />
     <Compile Include="Imports\Scripts.cs" />
     <Compile Include="Imports\Server.cs" />
@@ -61,6 +64,12 @@
     <Compile Include="Wrappings\BlipManager.cs" />
     <Compile Include="Wrappings\CheckPoint.cs" />
     <Compile Include="Wrappings\CheckPointManager.cs" />
+    <Compile Include="Wrappings\Fire.cs" />
+    <Compile Include="Wrappings\HashManager.cs" />
+    <Compile Include="Wrappings\IVObject.cs" />
+    <Compile Include="Wrappings\ObjectManager.cs" />
+    <Compile Include="Wrappings\Pickup.cs" />
+    <Compile Include="Wrappings\PickupManager.cs" />
     <Compile Include="Wrappings\PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappings\Player.cs" />
