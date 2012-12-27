@@ -11,7 +11,7 @@ namespace IvmpDotNet.Imports {
 		public static extern Boolean Players_IsConnected(ushort playerId);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern String Players_GetName(ushort playerId);
+        public static extern IntPtr Players_GetName(ushort playerId);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern Boolean Players_SetName(ushort playerId, String szName);
@@ -110,7 +110,7 @@ namespace IvmpDotNet.Imports {
 		public static extern Boolean Players_Ban(ushort playerId, UInt32 uiSeconds);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern String Players_GetIp(ushort playerId);
+        public static extern IntPtr Players_GetIp(ushort playerId);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern Boolean Players_GiveMoney(ushort playerId, Int32 iMoney);
@@ -161,7 +161,7 @@ namespace IvmpDotNet.Imports {
 		public static extern Int32 Players_GetAmmo(ushort playerId);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern String Players_GetSerial(ushort playerId);
+        public static extern IntPtr Players_GetSerial(ushort playerId);
 
 		[DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern Boolean Players_SetCameraBehind(ushort playerId);

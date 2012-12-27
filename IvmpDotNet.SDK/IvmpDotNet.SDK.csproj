@@ -40,10 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="IActor.cs" />
+    <Compile Include="IActorManager.cs" />
     <Compile Include="ICoreManager.cs" />
     <Compile Include="IEvents.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="IPlayerManager.cs" />
+    <Compile Include="IServerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

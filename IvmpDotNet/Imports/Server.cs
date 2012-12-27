@@ -22,7 +22,7 @@ namespace IvmpDotNet.Imports {
         public static extern void Server_SetRule(String rule, String value);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern String Server_GetRule(String rule);
+        public static extern IntPtr Server_GetRule(String rule);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Server_SetPassword(String pass);
@@ -40,10 +40,10 @@ namespace IvmpDotNet.Imports {
         public static extern void Server_SendInput(String input);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern String Server_GetWeaponName(Int32 iWeaponId);
+        public static extern IntPtr Server_GetWeaponName(Int32 iWeaponId);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern String Server_GetVehicleName(Int32 iModelId);
+        public static extern IntPtr Server_GetVehicleName(Int32 iModelId);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Server_ToggleFrequentEvents(Boolean bToggle);

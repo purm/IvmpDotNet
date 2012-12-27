@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 namespace InterfaceGenerator {
     static class NativeToCLRType {
-        public static string Convert(string nativeType) {
+        public static string Convert(string nativeType, bool retType) {
             string str = nativeType.ToLower().Replace(" ", "");
             switch (str) {
                 case "void":
@@ -24,7 +24,10 @@ namespace InterfaceGenerator {
                 case "char*":
                 case "wchar_t*":
                 case "constwchar_t*":
-                    return "String";
+                    if (retType)
+                        return "IntPtr";
+                    else
+                        return "String";
                 case "float":
                     return "Single";
                 case "double":
@@ -114,10 +117,10 @@ namespace InterfaceGenerator {
                         Match subMatch = Regex.Match(param, @"((.*)\s)?(\S+)$");
                         if (subMatch.Groups.Count == 4) {
                             paramString += subMatch.Groups[3].Value;
-                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + subMatch.Groups[3].Value;
+                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value, false) + " " + subMatch.Groups[3].Value;
                         } else {
                             paramString += "param" + i.ToString();
-                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + "param" + i.ToString();
+                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value, false) + " " + "param" + i.ToString();
                         }
 
                         if (i + 1 < splitted.Length) {
@@ -133,7 +136,7 @@ namespace InterfaceGenerator {
                     cppOutputBuilder.AppendLine();
 
                     csOutputBuilder.AppendLine("\t\t[DllImport(\"IvmpDotNetWrapper.dll\", CallingConvention = CallingConvention.Cdecl)]");
-                    csOutputBuilder.AppendLine(string.Format("\t\tpublic static extern {0} {1}_{2}({3});", NativeToCLRType.Convert(returnType), className, methodName, csParamstring));
+                    csOutputBuilder.AppendLine(string.Format("\t\tpublic static extern {0} {1}_{2}({3});", NativeToCLRType.Convert(returnType, true), className, methodName, csParamstring));
                     csOutputBuilder.AppendLine();
                     /*
                     EXPORT unsigned int Server_GetTickCount() {

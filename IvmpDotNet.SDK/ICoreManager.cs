@@ -8,5 +8,7 @@ namespace IvmpDotNet.SDK {
     public interface ICoreManager {
         IEvents EventManager { get; }
         IPlayerManager PlayerManager { get; }
+        IServerManager ServerManager { get; }
+        IActorManager ActorManager { get; }
     }
 }

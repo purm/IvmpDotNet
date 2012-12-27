@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IvmpDotNet {
+namespace IvmpDotNet.Wrappings {
     public class PlayerManager : IPlayerManager {
         public bool SendMessageToAll(string szMessage, int iColor, bool sqbAllowFormatting) {
             return Imports.Players.Players_SendMessageToAll(szMessage, iColor, sqbAllowFormatting);

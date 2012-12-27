@@ -48,14 +48,16 @@
     <Compile Include="Imports\Checkpoints.cs" />
     <Compile Include="Imports\Actors.cs" />
     <Compile Include="Imports\Blips.cs" />
-    <Compile Include="Imports\Common.cs" />
     <Compile Include="Imports\Players.cs" />
     <Compile Include="Imports\Server.cs" />
     <Compile Include="Imports\Vehicles.cs" />
     <Compile Include="IvmpDotNet.cs" />
-    <Compile Include="PlayerManager.cs" />
+    <Compile Include="Wrappings\Actor.cs" />
+    <Compile Include="Wrappings\ActorManager.cs" />
+    <Compile Include="Wrappings\PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappings\Player.cs" />
+    <Compile Include="Wrappings\ServerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IvmpDotNet.SDK\IvmpDotNet.SDK.csproj">

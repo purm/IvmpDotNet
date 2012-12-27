@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
+using IvmpDotNet.Wrappings;
 
 namespace IvmpDotNet {
     public class IvmpDotNetCore : IvmpDotNet.SDK.ICoreManager {
@@ -33,6 +34,8 @@ namespace IvmpDotNet {
         }
 
         private PlayerManager _playerManager = new PlayerManager();
+        private ServerManager _serverManager = new ServerManager();
+        private ActorManager _actorManager = new ActorManager();
 
         #endregion
 
@@ -93,6 +96,16 @@ namespace IvmpDotNet {
 
         SDK.IPlayerManager SDK.ICoreManager.PlayerManager {
             get { return _playerManager; }
+        }
+
+
+        SDK.IServerManager SDK.ICoreManager.ServerManager {
+            get { return _serverManager; }
+        }
+
+
+        SDK.IActorManager SDK.ICoreManager.ActorManager {
+            get { return _actorManager; }
         }
     }
 }

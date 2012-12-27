@@ -38,7 +38,7 @@ namespace IvmpDotNet.Imports {
         public static extern Boolean Actors_SetName(ushort actorId, String szName);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern String Actors_GetName(ushort actorId);
+        public static extern IntPtr Actors_GetName(ushort actorId);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern Boolean Actors_ToggleNametag(ushort actorId, Boolean bShow);

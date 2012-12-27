@@ -16,6 +16,7 @@ namespace IvmpDotNet.SampleCLRModule
                 e.Player.DisplayText(100, 100, "asdff", 60 * 1000);
             };
 
+            Console.WriteLine("ASDF: {0}", mgr.ServerManager.GetWeaponName(10));
             Console.WriteLine("Loaded Sample CLR Module");
         }
     }

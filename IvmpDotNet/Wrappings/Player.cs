@@ -18,7 +18,7 @@ namespace IvmpDotNet.Wrappings {
 
         public string Name {
             get {
-                return Imports.Players.Players_GetName(this.PlayerId);
+                return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Imports.Players.Players_GetName(this.PlayerId));
             }
             set {
                 Imports.Players.Players_SetName(this.PlayerId, value);
@@ -127,7 +127,7 @@ namespace IvmpDotNet.Wrappings {
         }
 
         public string Ip {
-            get { return Players.Players_GetIp(PlayerId); }
+            get { return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Players.Players_GetIp(PlayerId)); }
         }
 
         public int Money {
@@ -161,7 +161,7 @@ namespace IvmpDotNet.Wrappings {
         }
 
         public string Serial {
-            get { return Players.Players_GetSerial(PlayerId); }
+            get { return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Players.Players_GetSerial(PlayerId)); }
         }
 
         public bool Ducking {
