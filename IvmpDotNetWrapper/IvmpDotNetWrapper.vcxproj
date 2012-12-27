@@ -43,11 +43,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK\Shared;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\SDK\Shared;$(ProjectDir)\SDK;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK\Shared;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper\SDK;D:\Projekte\IvmpDotNet\IvmpDotNetWrapper;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\SDK\Shared;$(ProjectDir)\SDK;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
