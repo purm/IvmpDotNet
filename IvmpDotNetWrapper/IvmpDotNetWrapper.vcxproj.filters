@@ -89,6 +89,9 @@
     <ClCompile Include="Players.cpp">
       <Filter>Quelldateien\Exports</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

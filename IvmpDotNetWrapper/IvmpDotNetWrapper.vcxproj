@@ -105,6 +105,7 @@
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Players.cpp" />
+    <ClCompile Include="Scripts.cpp" />
     <ClCompile Include="SDK\SDK.cpp" />
     <ClCompile Include="SDK\Shared\CString.cpp" />
     <ClCompile Include="SDK\Shared\Game\CControlState.cpp" />

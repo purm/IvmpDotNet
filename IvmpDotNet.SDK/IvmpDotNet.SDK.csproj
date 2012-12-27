@@ -50,6 +50,7 @@
     <Compile Include="IEvents.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="IPlayerManager.cs" />
+    <Compile Include="IScriptManager.cs" />
     <Compile Include="IServerManager.cs" />
     <Compile Include="IVehicle.cs" />
     <Compile Include="IVehicleManager.cs" />

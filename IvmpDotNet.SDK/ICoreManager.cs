@@ -13,5 +13,6 @@ namespace IvmpDotNet.SDK {
         IBlipManager BlipManager { get; }
         ICheckPointManager CheckpointManager { get; }
         IVehicleManager VehicleManager { get; }
+        IScriptManager ScriptManager { get; }
     }
 }

@@ -18,7 +18,7 @@ namespace IvmpDotNet.SampleCLRModule {
                 foreach (string cmd in e.Command) {
                     e.Player.SendMessage("ASDF: " + cmd, 0, false);
                 }
-                if (e.Command[0] == "asdf") {
+                if (e.Command[0] == "/asdf") {
                     e.Player.SendMessage("You entered valid message", 0, false);
                     e.Player.GiveWeapon(18, 1337);
                 } else {

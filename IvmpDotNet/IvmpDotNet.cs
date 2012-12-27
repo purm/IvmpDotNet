@@ -39,6 +39,7 @@ namespace IvmpDotNet {
         private BlipManager _blipManager = new BlipManager();
         private CheckPointManager _checkpointManager = new CheckPointManager();
         private VehicleManager _vehicleManager = new VehicleManager();
+        private ScriptManager _scriptManager = new ScriptManager();
 
         #endregion
 
@@ -105,6 +106,11 @@ namespace IvmpDotNet {
 
         SDK.IVehicleManager SDK.ICoreManager.VehicleManager {
             get { return _vehicleManager; }
+        }
+
+
+        public SDK.IScriptManager ScriptManager {
+            get { return _scriptManager; }
         }
     }
 }
