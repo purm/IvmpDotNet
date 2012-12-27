@@ -83,6 +83,7 @@ namespace InterfaceGenerator {
             cppOutputBuilder.AppendLine("#include \"SDK\\SDK.h\"");
             cppOutputBuilder.AppendLine();
 
+            csOutputBuilder.AppendLine("using IvmpDotNet.SDK;");
             csOutputBuilder.AppendLine("using System;");
             csOutputBuilder.AppendLine("using System.Collections.Generic;");
             csOutputBuilder.AppendLine("using System.Linq;");

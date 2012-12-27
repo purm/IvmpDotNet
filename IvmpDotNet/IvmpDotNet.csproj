@@ -53,6 +53,7 @@
     <Compile Include="Imports\Server.cs" />
     <Compile Include="Imports\Vehicles.cs" />
     <Compile Include="IvmpDotNet.cs" />
+    <Compile Include="PlayerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappings\Player.cs" />
   </ItemGroup>
