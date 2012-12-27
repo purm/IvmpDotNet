@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="CLRModuleLoader.cs" />
     <Compile Include="EventManager.cs" />
+    <Compile Include="Imports\Area.cs" />
     <Compile Include="Imports\Checkpoints.cs" />
     <Compile Include="Imports\Actors.cs" />
     <Compile Include="Imports\Blips.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="IvmpDotNet.cs" />
     <Compile Include="Wrappings\Actor.cs" />
     <Compile Include="Wrappings\ActorManager.cs" />
+    <Compile Include="Wrappings\AreaManager.cs" />
     <Compile Include="Wrappings\Blip.cs" />
     <Compile Include="Wrappings\BlipManager.cs" />
     <Compile Include="Wrappings\CheckPoint.cs" />

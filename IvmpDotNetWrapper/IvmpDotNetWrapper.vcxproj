@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actors.cpp" />
+    <ClCompile Include="Area.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Blips.cpp" />
     <ClCompile Include="Checkpoints.cpp" />

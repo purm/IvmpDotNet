@@ -42,6 +42,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="IActor.cs" />
     <Compile Include="IActorManager.cs" />
+    <Compile Include="IAreaManager.cs" />
     <Compile Include="IBlip.cs" />
     <Compile Include="IBlipManager.cs" />
     <Compile Include="ICheckPoint.cs" />

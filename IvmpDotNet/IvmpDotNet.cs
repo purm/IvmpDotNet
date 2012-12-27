@@ -40,6 +40,7 @@ namespace IvmpDotNet {
         private CheckPointManager _checkpointManager = new CheckPointManager();
         private VehicleManager _vehicleManager = new VehicleManager();
         private ScriptManager _scriptManager = new ScriptManager();
+        private AreaManager _areaManager = new AreaManager();
 
         #endregion
 
@@ -109,8 +110,12 @@ namespace IvmpDotNet {
         }
 
 
-        public SDK.IScriptManager ScriptManager {
+        SDK.IScriptManager SDK.ICoreManager.ScriptManager {
             get { return _scriptManager; }
+        }
+
+        SDK.IAreaManager SDK.ICoreManager.AreaManager {
+            get { return _areaManager; }
         }
     }
 }
