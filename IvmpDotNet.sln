@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet", "IvmpDotNet\Iv
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IvmpDotNetWrapper", "IvmpDotNetWrapper\IvmpDotNetWrapper.vcxproj", "{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}"
 EndProject
-Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "svr\ivmp-svr.exe", "{30E72F24-2F8C-4753-A90C-10287F7028B2}"
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "\svr\ivmp-svr.exe", "{30E72F24-2F8C-4753-A90C-10287F7028B2}"
 	ProjectSection(DebuggerProjectSystem) = preProject
 		PortSupplier = 00000000-0000-0000-0000-000000000000
 		Executable = D:\Projekte\IvmpDotNet\svr\ivmp-svr.exe

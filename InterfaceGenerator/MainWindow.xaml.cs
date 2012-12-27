@@ -17,7 +17,13 @@ namespace InterfaceGenerator {
     static class NativeToCLRType {
         public static string Convert(string nativeType, bool retType) {
             string str = nativeType.ToLower().Replace(" ", "");
+            if (str.StartsWith("intrespawn_delay"))
+                return "Int32";
+
             switch (str) {
+                case "cplayerinterface*":
+                case "cvehicleinterface*":
+                    return "IntPtr";
                 case "void":
                     return "void";
                 case "constchar*":
@@ -37,6 +43,7 @@ namespace InterfaceGenerator {
                 case "void*":
                     return "IntPtr";
                 case "unsignedchar":
+                case "byte":
                     return "Byte";
                 case "short":
                     return "Int16";

@@ -28,11 +28,13 @@ namespace IvmpDotNet {
             }
         }
 
-        private EventManager _eventManager = new EventManager();
-        public EventManager EventManager {
-            get { return _eventManager; }
+        public EventManager EventHandler {
+            get {
+                return _eventManager;
+            }
         }
 
+        private EventManager _eventManager = new EventManager();
         private PlayerManager _playerManager = new PlayerManager();
         private ServerManager _serverManager = new ServerManager();
         private ActorManager _actorManager = new ActorManager();
@@ -45,6 +47,7 @@ namespace IvmpDotNet {
         private PickupManager _pickupManager = new PickupManager();
         private HashManager _hashManager = new HashManager();
         private WorldManager _worldManager = new WorldManager();
+        private NetworkManager _networkManager = new NetworkManager();
 
         #endregion
 
@@ -53,8 +56,10 @@ namespace IvmpDotNet {
         public bool InitModule(out string moduleName) {
             moduleName = ModuleName;
 
-            Console.WriteLine("[{0}] InitModule", ModuleName);
+            //Console.WriteLine("[{0}] InitModule", ModuleName);
+            _serverManager.Log("Initializing {0}", ModuleName);
 
+            //Loading all the CLR Modules
             CLRModuleLoader.LoadModules(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "CLRModules"));
 
             return true;
@@ -69,77 +74,82 @@ namespace IvmpDotNet {
         }
 
         public void SetupFunctions() {
-            Console.WriteLine("[{0}] SetupFunctions", ModuleName);
+            //Console.WriteLine("[{0}] SetupFunctions", ModuleName);
         }
 
         public void SetupInterfaces() {
-            Console.WriteLine("[{0}] SetupInterfaces", ModuleName);
+            //Console.WriteLine("[{0}] SetupInterfaces", ModuleName);
         }
 
         public void SetupNewInterfaces() {
-            Console.WriteLine("[{0}] SetupNewInterfaces", ModuleName);
+            //Console.WriteLine("[{0}] SetupNewInterfaces", ModuleName);
         }
 
         #endregion
 
-        SDK.IEvents SDK.ICoreManager.EventManager {
+        public SDK.IEvents EventManager {
             get { return this._eventManager; }
         }
 
-        SDK.IPlayerManager SDK.ICoreManager.PlayerManager {
+        public SDK.IPlayerManager PlayerManager {
             get { return _playerManager; }
         }
 
 
-        SDK.IServerManager SDK.ICoreManager.ServerManager {
+        public SDK.IServerManager ServerManager {
             get { return _serverManager; }
         }
 
 
-        SDK.IActorManager SDK.ICoreManager.ActorManager {
+        public SDK.IActorManager ActorManager {
             get { return _actorManager; }
         }
 
-        SDK.IBlipManager SDK.ICoreManager.BlipManager {
+        public SDK.IBlipManager BlipManager {
             get { return _blipManager; }
         }
 
 
-        SDK.ICheckPointManager SDK.ICoreManager.CheckpointManager {
+        public SDK.ICheckPointManager CheckpointManager {
             get { return _checkpointManager; }
         }
 
-        SDK.IVehicleManager SDK.ICoreManager.VehicleManager {
+        public SDK.IVehicleManager VehicleManager {
             get { return _vehicleManager; }
         }
 
 
-        SDK.IScriptManager SDK.ICoreManager.ScriptManager {
+        public SDK.IScriptManager ScriptManager {
             get { return _scriptManager; }
         }
 
-        SDK.IAreaManager SDK.ICoreManager.AreaManager {
+        public SDK.IAreaManager AreaManager {
             get { return _areaManager; }
         }
 
 
-        SDK.IObjectManager SDK.ICoreManager.ObjectManager {
+        public SDK.IObjectManager ObjectManager {
             get { return _objectManager; }
         }
 
 
-        SDK.IPickupManager SDK.ICoreManager.PickupManager {
+        public SDK.IPickupManager PickupManager {
             get { return _pickupManager; }
         }
 
 
-        SDK.IHashManager SDK.ICoreManager.HashManager {
+        public SDK.IHashManager HashManager {
             get { return _hashManager; }
         }
 
 
-        SDK.IWorldManager SDK.ICoreManager.WorldManager {
+        public SDK.IWorldManager WorldManager {
             get { return _worldManager; }
+        }
+
+
+        public SDK.INetworkManager NetworkManager {
+            get { return _networkManager; }
         }
     }
 }

@@ -12,6 +12,10 @@ namespace IvmpDotNet.Wrappings {
             Server.Server_Log(txt);
         }
 
+        public void Log(string txt, params object[] args) {
+            Log(string.Format(txt, args));
+        }
+
         public void AddRule(string rule, string value) {
             Server.Server_AddRule(rule, value);
         }

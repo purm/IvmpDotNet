@@ -19,5 +19,6 @@ namespace IvmpDotNet.SDK {
         IPickupManager PickupManager { get; }
         IHashManager HashManager { get; }
         IWorldManager WorldManager { get; }
+        INetworkManager NetworkManager { get; }
     }
 }

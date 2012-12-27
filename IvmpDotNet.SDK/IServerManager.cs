@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace IvmpDotNet.SDK {
     public interface IServerManager {
         void Log(string txt);
+        void Log(string txt, params object[] args);
         void AddRule(String rule, String value);
         void RemoveRule(String rule);
         void SetRule(String rule, String value);

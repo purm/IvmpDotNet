@@ -13,5 +13,13 @@ namespace IvmpDotNet.Wrappings {
                 VehicleId = id
             };
         }
+
+        public void Remove(ushort vehicleId) {
+            Imports.GetVehicleManager.GetVehicleManager_Remove(vehicleId);
+        }
+
+        public bool DoesExist(ushort vehicleId) {
+            return DoesExist(vehicleId);
+        }
     }
 }

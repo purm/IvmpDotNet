@@ -30,7 +30,7 @@ namespace IvmpDotNet.SampleCLRModule {
                 } 
             };
 
-            
+            //mgr.NetworkManager.AddBan("test", 123);
 
             mgr.VehicleManager.Create(
                 40,

@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet {
     static class CLRModuleLoader {
+        /// <summary>
+        /// Loads all the CLR modules in a given path and
+        /// searches for a STATIC method in a STATIC class named "InitializeCLRModule" and calls it with SDK ICoreManager as param
+        /// </summary>
+        /// <param name="path">path to search for CLR Modules</param>
         public static void LoadModules(string path) {
             DirectoryInfo di = new DirectoryInfo(path);
             FileInfo[] fls = di.GetFiles("*.dll");

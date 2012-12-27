@@ -50,11 +50,14 @@
     <Compile Include="Imports\Actors.cs" />
     <Compile Include="Imports\Blips.cs" />
     <Compile Include="Imports\Hash.cs" />
+    <Compile Include="Imports\NetworManager.cs" />
     <Compile Include="Imports\Objects.cs" />
     <Compile Include="Imports\Pickups.cs" />
+    <Compile Include="Imports\PlayerManager.cs" />
     <Compile Include="Imports\Players.cs" />
     <Compile Include="Imports\Scripts.cs" />
     <Compile Include="Imports\Server.cs" />
+    <Compile Include="Imports\VehicleManager.cs" />
     <Compile Include="Imports\Vehicles.cs" />
     <Compile Include="Imports\World.cs" />
     <Compile Include="IvmpDotNet.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Wrappings\Fire.cs" />
     <Compile Include="Wrappings\HashManager.cs" />
     <Compile Include="Wrappings\IVObject.cs" />
+    <Compile Include="Wrappings\NetworkManager.cs" />
     <Compile Include="Wrappings\ObjectManager.cs" />
     <Compile Include="Wrappings\Pickup.cs" />
     <Compile Include="Wrappings\PickupManager.cs" />
