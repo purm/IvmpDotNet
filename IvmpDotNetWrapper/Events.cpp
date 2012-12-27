@@ -6,6 +6,7 @@ void RegisterEvents() {
 	IVMP::Events::Manager()->AddModuleEvent("consoleInput", event_consoleInput);
 	IVMP::Events::Manager()->AddModuleEvent("consoleOutput", event_consoleOutput);
 	IVMP::Events::Manager()->AddModuleEvent("playerSpawn", event_playerSpawn);
+	IVMP::Events::Manager()->AddModuleEvent("playerCommand", event_playerCommand);
 }
 
 void event_serverPulse(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
@@ -28,6 +29,12 @@ void event_consoleOutput(SquirrelArgumentsInterface* pArguments, SquirrelArgumen
 
 void event_playerSpawn(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
 	IvmpDotNet::IvmpDotNetCore::Singleton->EventManager->RaisePlayerSpawn(pArguments->Get(0)->GetInteger());
+
+	pReturn->SetInteger(1);
+}
+
+void event_playerCommand(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
+	IvmpDotNet::IvmpDotNetCore::Singleton->EventManager->RaisePlayerCommand(pArguments->Get(0)->GetInteger(), gcnew System::String(pArguments->Get(1)->GetString()));
 
 	pReturn->SetInteger(1);
 }

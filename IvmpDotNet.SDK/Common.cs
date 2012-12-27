@@ -13,12 +13,6 @@ namespace IvmpDotNet.SDK {
         public Single Z { get; set; }
     }
 
-    public enum VehicleLocking {
-        Unlocked = 0,
-        Locked = 1,
-        LockedWithBreakableGlass = 2
-    }
-
     [StructLayout(LayoutKind.Sequential)]
     public struct CControlState {
         byte ucOnFootMove_left;

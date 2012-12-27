@@ -5,6 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IvmpDotNet.SDK {
+    public enum LockedState {
+        Unlocked = 0,
+        Locked = 1,
+        LockedWithBreakableGlass = 2
+    }
+
     public interface IVehicle {
         ushort VehicleId { get; set; }
 
@@ -20,11 +26,11 @@ namespace IvmpDotNet.SDK {
         CVector3 AngularVelocity { get; set; }
         bool IsOccupied { get; }
         IPlayer[] Occupants { get; }
-        int Locked { get; set; }
+        LockedState Locked { get; set; }
         int Variation { get; set; }
         bool EngineStatus { get; set; }
         bool Lights { get; set; }
-        bool TaxiLights { get; }
+        bool TaxiLights { get; set; }
         int Dimension { get; set; }
         int RespawnDelay { get; set; }
         
@@ -37,8 +43,7 @@ namespace IvmpDotNet.SDK {
         //IntPtr GetIndicators(); //*TODO* 
       //  Boolean SetComponent(Int32 iSlot, Boolean bOn);
         Boolean ResetComponents();
-        //IntPtr GetComponents();     
-        Boolean SwitchTaxiLights(Boolean check);     
+        //IntPtr GetComponents();      
         Boolean ControlCarDoors(Int32 door, Boolean door2, Single door3);
         Boolean RepairWheels();
         Boolean RepairWindows();

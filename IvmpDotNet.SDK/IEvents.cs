@@ -13,10 +13,15 @@ namespace IvmpDotNet.SDK {
         public IPlayer Player { get; set; }
     }
 
+    public class PlayerCommandArgs : PlayerEventArgs {
+        public string[] Command { get; set; }
+    }
+
     public interface IEvents {
         event EventHandler ServerPulse;
         event EventHandler<ConsoleEventArgs> ConsoleInput;
         event EventHandler<ConsoleEventArgs> ConsoleOutput;
         event EventHandler<PlayerEventArgs> PlayerSpawn;
+        event EventHandler<PlayerCommandArgs> PlayerCommand;
     }
 }
