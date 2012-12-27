@@ -88,6 +88,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Events.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SDK\SDK.h" />
     <ClInclude Include="SDK\Shared\Common.h" />
@@ -101,7 +102,9 @@
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Blips.cpp" />
     <ClCompile Include="Checkpoints.cpp" />
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Players.cpp" />
     <ClCompile Include="SDK\SDK.cpp" />
     <ClCompile Include="SDK\Shared\CString.cpp" />
     <ClCompile Include="SDK\Shared\Game\CControlState.cpp" />

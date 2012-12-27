@@ -50,11 +50,15 @@ namespace InterfaceGenerator {
                     return "char";
                 case "cvector3":
                     return "CVector3";
+                case "ccontrolstate":
+                    return "CControlState";
                 case "entityid":
                     return "ushort";
                 case "int*":
                 case "byte*":
                     return "IntPtr";
+                case "":
+                    return string.Empty;
             }
 
             throw new ArgumentException();
@@ -107,8 +111,13 @@ namespace InterfaceGenerator {
                     int i = 0;
                     foreach (string param in splitted) {
                         Match subMatch = Regex.Match(param, @"((.*)\s)?(\S+)$");
-                        paramString += subMatch.Groups[3].Value;
-                        csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + subMatch.Groups[3].Value;
+                        if (subMatch.Groups.Count == 4) {
+                            paramString += subMatch.Groups[3].Value;
+                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + subMatch.Groups[3].Value;
+                        } else {
+                            paramString += "param" + i.ToString();
+                            csParamstring += NativeToCLRType.Convert(subMatch.Groups[2].Value) + " " + "param" + i.ToString();
+                        }
 
                         if (i + 1 < splitted.Length) {
                             paramString += ", ";

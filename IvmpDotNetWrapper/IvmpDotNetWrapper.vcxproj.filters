@@ -42,6 +42,9 @@
     <ClInclude Include="SDK\SDK.h">
       <Filter>SDK</Filter>
     </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -78,6 +81,12 @@
       <Filter>Quelldateien\Exports</Filter>
     </ClCompile>
     <ClCompile Include="Checkpoints.cpp">
+      <Filter>Quelldateien\Exports</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Players.cpp">
       <Filter>Quelldateien\Exports</Filter>
     </ClCompile>
   </ItemGroup>

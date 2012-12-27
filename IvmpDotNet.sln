@@ -19,6 +19,8 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "svr\ivmp-svr.ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceGenerator", "InterfaceGenerator\InterfaceGenerator.csproj", "{D42047BF-F9AB-477E-8468-51085CBF7E50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet.SDK", "IvmpDotNet.SDK\IvmpDotNet.SDK.csproj", "{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,18 @@ Global
 		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|Win32.ActiveCfg = Release|x86
 		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|x86.ActiveCfg = Release|x86
 		{D42047BF-F9AB-477E-8468-51085CBF7E50}.Release|x86.Build.0 = Release|x86
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|Win32.ActiveCfg = Release|Any CPU
+		{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
