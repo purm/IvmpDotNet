@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet.Imports {
     public static class ObjectManager {
-        [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(IvmpDotNet.Core.Imports.Common.ImportDllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern bool DoesExist(ushort objectId);
     }
 }

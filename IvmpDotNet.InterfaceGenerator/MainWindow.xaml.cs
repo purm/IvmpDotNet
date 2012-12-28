@@ -142,7 +142,7 @@ namespace IvmpDotNet.InterfaceGenerator {
                     cppOutputBuilder.AppendLine("}");
                     cppOutputBuilder.AppendLine();
 
-                    csOutputBuilder.AppendLine("\t\t[DllImport(\"IvmpDotNetWrapper.dll\", CallingConvention = CallingConvention.Cdecl)]");
+                    csOutputBuilder.AppendLine("\t\t[DllImport(IvmpDotNet.Core.Imports.Common.ImportDllName, CallingConvention = CallingConvention.Cdecl)]");
                     csOutputBuilder.AppendLine(string.Format("\t\tpublic static extern {0} {1}_{2}({3});", NativeToCLRType.Convert(returnType, true), className, methodName, csParamstring));
                     csOutputBuilder.AppendLine();
                     /*

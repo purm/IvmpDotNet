@@ -7,10 +7,10 @@ using System.Text;
 
 namespace IvmpDotNet.Imports {
     public static class Hash {
-        [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(IvmpDotNet.Core.Imports.Common.ImportDllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Hash_md5(String toHash);
 
-        [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(IvmpDotNet.Core.Imports.Common.ImportDllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr Hash_md5File(String szFileName);
     }
 }
