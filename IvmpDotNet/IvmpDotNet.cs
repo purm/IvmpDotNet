@@ -9,6 +9,7 @@ namespace IvmpDotNet {
     public class IvmpDotNetCore : IvmpDotNet.SDK.ICoreManager {
         #region Constants
 
+        public static readonly string ModulePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "CLRModules");
         public static readonly string ModuleName = "CLR Host";
 
         #endregion
@@ -57,12 +58,54 @@ namespace IvmpDotNet {
             moduleName = ModuleName;
 
             //Console.WriteLine("[{0}] InitModule", ModuleName);
-            _serverManager.Log("Initializing {0}", ModuleName);
+            Log("[Initializing...");
 
             //Loading all the CLR Modules
-            CLRModuleLoader.LoadModules(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "CLRModules"));
+            CLRModuleLoader.LoadModules(ModulePath);
+
+            EventManager.ConsoleInput += EventManager_ConsoleInput;
 
             return true;
+        }
+
+        void EventManager_ConsoleInput(object sender, SDK.ConsoleEventArgs e) {
+            ExecuteTextCommand(e.Text);
+        }
+
+        public void Log(string message, params object[] args) {
+            Singleton.ServerManager.Log(string.Format("[CLR Host] {0}", string.Format(message, args)));
+        }
+
+        private void ExecuteTextCommand(string command) {
+            string[] args = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            if (args.Length < 1)
+                return;
+
+            if (args[0] != "clr")
+                return;
+
+            if (args.Length < 2) {
+                Log("Possible commands:");
+                Log("\tclr load (loads all clr modules)");
+                Log("\tclr unload (unloads all clr modules)");
+                Log("\tclr reload (reloads all clr modules)");
+                return;
+            }
+
+            switch (args[1]) {
+                case "load":
+                    CLRModuleLoader.LoadModules(ModulePath);
+                    break;
+                case "unload":
+                    CLRModuleLoader.UnloadModules();
+                    break;
+                case "reload":
+                    CLRModuleLoader.ReloadModules();
+                    break;
+                default:
+                    Log("unkwon command");
+                    break;
+            }
         }
 
         public void ScriptLoad() {

@@ -50,6 +50,7 @@
     <Compile Include="ICoreManager.cs" />
     <Compile Include="IEvents.cs" />
     <Compile Include="IHashManager.cs" />
+    <Compile Include="IModule.cs" />
     <Compile Include="INetworkManager.cs" />
     <Compile Include="IObject.cs" />
     <Compile Include="IObjectManager.cs" />
