@@ -8,7 +8,7 @@ using System.Text;
 namespace IvmpDotNet.Imports {
     public static class Pickups {
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern ushort Pickups_Create(Int32 modelhash, Byte type, UInt32 value, CVector3 vecPosition, CVector3 vecRotation);
+        public static extern ushort Pickups_Create(long modelhash, Byte type, UInt32 value, CVector3 vecPosition, CVector3 vecRotation);
 
         [DllImport("IvmpDotNetWrapper.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern Boolean Pickups_Delete(ushort pickupid);

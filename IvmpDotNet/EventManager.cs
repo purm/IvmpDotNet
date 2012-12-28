@@ -10,7 +10,7 @@ namespace IvmpDotNet {
 
         public event EventHandler ServerPulse;
         public event EventHandler<ConsoleEventArgs> ConsoleInput;
-        public event EventHandler<ConsoleEventArgs> ConsoleOutput;
+        public event EventHandler<ConsoleOutputEventArgs> ConsoleOutput;
         public event EventHandler<PlayerEventArgs> PlayerSpawn;
         public event EventHandler<PlayerCommandArgs> PlayerCommand;
 
@@ -18,7 +18,7 @@ namespace IvmpDotNet {
 
         #region Methods
 
-        public void RaisePlayerCommand(ushort playerId, string command) {
+        public int RaisePlayerCommand(ushort playerId, string command) {
             if (PlayerCommand != null)
                 PlayerCommand(this, new PlayerCommandArgs() {
                     Player = new Wrappings.Player() {
@@ -26,34 +26,49 @@ namespace IvmpDotNet {
                     },
                     Command = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)
                 });
+
+            return 1;
         }
 
-        public void RaisePlayerSpawn(ushort playerId) {
+        public int RaisePlayerSpawn(ushort playerId) {
             if (PlayerSpawn != null)
                 PlayerSpawn(this, new PlayerEventArgs() {
                     Player = new Wrappings.Player() {
                         PlayerId = playerId
                     }
                 });
+
+            return 1;
         }
 
-        public void RaiseConsoleOutput(string outputtedText) {
-            if (ConsoleOutput != null)
-                ConsoleOutput(this, new ConsoleEventArgs() {
+        public int RaiseConsoleOutput(string outputtedText) {
+            if (ConsoleOutput != null){
+                ConsoleOutputEventArgs args = new ConsoleOutputEventArgs() {
                     Text = outputtedText
-                });
+                };
+
+                ConsoleOutput(this, args);
+                if (args.Cancel)
+                    return 0;
+            }
+
+            return 1;
         }
 
-        public void RaiseConsoleInput(string enteredText) {
+        public int RaiseConsoleInput(string enteredText) {
             if (ConsoleInput != null)
                 ConsoleInput(this, new ConsoleEventArgs() {
                     Text = enteredText
                 });
+
+            return 1;
         }
 
-        public void RaiseServerPulse() {
+        public int RaiseServerPulse() {
             if (ServerPulse != null)
                 ServerPulse(this, EventArgs.Empty);
+
+            return 1;
         }
 
         #endregion

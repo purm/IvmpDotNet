@@ -13,12 +13,12 @@ namespace IvmpDotNet.Wrappings {
             set;
         }
 
-        public int Model {
-            get { return Pickups.Pickups_GetModel(PickupId); }
+        public PickupModels Model {
+            get { return (PickupModels)Pickups.Pickups_GetModel(PickupId); }
         }
 
-        public int Type {
-            get { return Pickups.Pickups_GetType(PickupId); }
+        public PickupTypes Type {
+            get { return (PickupTypes)Pickups.Pickups_GetType(PickupId); }
         }
 
         public uint Value {

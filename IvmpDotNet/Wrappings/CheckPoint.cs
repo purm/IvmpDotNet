@@ -13,12 +13,12 @@ namespace IvmpDotNet.Wrappings {
             set;
         }
 
-        public int Type {
+        public CheckpointTypes Type {
             get {
-                return Checkpoints.Checkpoints_GetType(CheckPointId);
+                return (CheckpointTypes)Checkpoints.Checkpoints_GetType(CheckPointId);
             }
             set {
-                Checkpoints.Checkpoints_SetType(CheckPointId, value);
+                Checkpoints.Checkpoints_SetType(CheckPointId, (int)value);
             }
         }
 

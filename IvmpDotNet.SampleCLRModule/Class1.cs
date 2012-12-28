@@ -18,8 +18,21 @@ namespace IvmpDotNet.SampleCLRModule {
 
             //coreManager.NetworkManager.AddBan("test", 123);
 
-            vehicle = coreManager.VehicleManager.Create(
-                40,
+            //vehicle = coreManager.VehicleManager.Create(
+            //    40,
+            //    new SDK.CVector3() {
+            //        X = 1657.118408f,
+            //        Y = 421.462982f,
+            //        Z = 28.569500f
+            //    },
+            //    new SDK.CVector3() {
+            //        X = 359.828613f,
+            //        Y = 352.884033f,
+            //        Z = 267.583008f
+            //    },
+            //    0, 0, 0, 0, -1);
+
+            coreManager.PickupManager.Create(PickupModels.DesertEagle, PickupTypes.CanPickup, 999,
                 new SDK.CVector3() {
                     X = 1657.118408f,
                     Y = 421.462982f,
@@ -29,8 +42,7 @@ namespace IvmpDotNet.SampleCLRModule {
                     X = 359.828613f,
                     Y = 352.884033f,
                     Z = 267.583008f
-                },
-                0, 0, 0, 0, -1);
+                });
 
             Console.WriteLine("ASDF: {0}", coreManager.ServerManager.GetWeaponName(10));
             Console.WriteLine("Loaded Sample CLR Module");
@@ -52,9 +64,10 @@ namespace IvmpDotNet.SampleCLRModule {
                 e.Player.SendMessage("ASDF: " + cmd, 0, false);
             }
 
-            if (e.Command[0] == "/unload") {
-                UnloadCLRModule();
-            } else if (e.Command[0] == "/asdf") {
+            //if (e.Command[0] == "/unload") {
+            //    UnloadCLRModule();
+            //} else
+            if (e.Command[0] == "/asdf") {
                 e.Player.SendMessage("You entered valid message", 0, false);
                 e.Player.GiveWeapon(18, 1337);
             } else if (e.Command[0] == "/test") {

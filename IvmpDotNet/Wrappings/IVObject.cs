@@ -60,8 +60,8 @@ namespace IvmpDotNet.Wrappings {
             return Objects.Objects_AttachVehicle(ObjectId, vehicle.VehicleId, vecPos, vecRot);
         }
 
-        public bool AttachPed(IPlayer player, CVector3 vecPos, CVector3 vecRot) {
-            return Objects.Objects_AttachPed(ObjectId, player.PlayerId, vecPos, vecRot);
+        public bool AttachPed(ushort pedId, CVector3 vecPos, CVector3 vecRot) {
+            return Objects.Objects_AttachPed(ObjectId, pedId, vecPos, vecRot);
         }
 
         public bool Delete() {

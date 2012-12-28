@@ -7,6 +7,91 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet.SDK {
     /// <summary>
+    /// Indicates that an event is only triggerd if "frequently events" are turned on
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Event, AllowMultiple = false)]
+    public class FrequentlyEventAttribute : Attribute { }
+
+    /// <summary>
+    /// The possible models for pickups
+    /// </summary>
+    public enum PickupModels : uint {
+        HealthKit = 0x3fc62578,
+        Armour = 0x972daa10,
+        BaseballBat = 0x68d19067,
+        PoolCue = 0x4e746e14,
+        Knife = 0x3dfebd8b,
+        Grenade = 0x3b373591,
+        Molotov = 0x88b44609,
+        RPG = 0x5603b9ec,
+        GlockPistol = 0xf44c839d,
+        DesertEagle = 0x5caeb064,
+        Shotgun = 0x6e10d6c3,
+        Beretta = 0xddb2b5ad,
+        Uzi = 0xafd2e07b,
+        Mp5 = 0x65daddfd,
+        Ak47 = 0x1bdd0543,
+        M4 = 0x35855559,
+        Rifle = 0x08762932,
+        M40A1 = 0x22c755b0
+    }
+
+    /// <summary>
+    /// The types of pickups
+    /// </summary>
+    public enum PickupTypes : byte {
+        /// <summary>
+        /// Can't pickup, does not disappear
+        /// </summary>
+        CantPickup = 1,
+
+        /// <summary>
+        /// Can pickup, disappears on pickup
+        /// </summary>
+        CanPickup = 2
+    }
+
+    /// <summary>
+    /// The Types of Checkpoints
+    /// </summary>
+    public enum CheckpointTypes : int {
+        /// <summary>
+        /// Cylinder (tube) with an arrow
+        /// </summary>
+        ArrowTube = 2,
+
+        /// <summary>
+        /// Cylinder (tube) with a flag
+        /// </summary>
+        FlagTube = 3,
+
+        /// <summary>
+        /// Corona with an arrow
+        /// </summary>
+        ArrowCorona = 4,
+
+        /// <summary>
+        /// Corona with a flag
+        /// </summary>
+        FlagCorona = 5,
+
+        /// <summary>
+        /// Just an arrow
+        /// </summary>
+        Arrow = 6,
+
+        /// <summary>
+        /// Just a flag
+        /// </summary>
+        Corona = 7,
+
+        /// <summary>
+        /// Just a circle
+        /// </summary>
+        Circle = 8
+    }
+
+    /// <summary>
     /// 3D Vector
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]

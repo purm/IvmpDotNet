@@ -61,7 +61,7 @@ namespace InterfaceGenerator.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die virtual\s(.*)\s(\S+)\(([^\)]+)\)\s=\s0; ähnelt.
         /// </summary>
         internal static string ParsingPattern {
             get {
