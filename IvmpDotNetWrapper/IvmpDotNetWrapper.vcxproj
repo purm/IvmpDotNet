@@ -107,6 +107,7 @@
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NetworkManager.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="Objects.cpp" />
     <ClCompile Include="Pickups.cpp" />
     <ClCompile Include="PlayerManager.cpp" />

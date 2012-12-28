@@ -25,5 +25,9 @@ namespace IvmpDotNet.Wrappings {
                 FireId = id
             };
         }
+
+        public bool DoesExist(ushort id) {
+            return Imports.ObjectManager.DoesExist(id);
+        }
     }
 }

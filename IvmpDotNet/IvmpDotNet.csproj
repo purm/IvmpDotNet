@@ -51,6 +51,7 @@
     <Compile Include="Imports\Blips.cs" />
     <Compile Include="Imports\Hash.cs" />
     <Compile Include="Imports\NetworManager.cs" />
+    <Compile Include="Imports\ObjectManager.cs" />
     <Compile Include="Imports\Objects.cs" />
     <Compile Include="Imports\Pickups.cs" />
     <Compile Include="Imports\PlayerManager.cs" />
