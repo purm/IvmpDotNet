@@ -5,7 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using IvmpDotNet.Wrappings;
 
-namespace IvmpDotNet {
+namespace IvmpDotNet.Core {
     public class IvmpDotNetCore : IvmpDotNet.SDK.ICoreManager {
         #region Constants
 

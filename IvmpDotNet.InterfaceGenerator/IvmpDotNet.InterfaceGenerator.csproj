@@ -8,8 +8,8 @@
     <ProjectGuid>{D42047BF-F9AB-477E-8468-51085CBF7E50}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InterfaceGenerator</RootNamespace>
-    <AssemblyName>InterfaceGenerator</AssemblyName>
+    <RootNamespace>IvmpDotNet.InterfaceGenerator</RootNamespace>
+    <AssemblyName>IvmpDotNet.InterfaceGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

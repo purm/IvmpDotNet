@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
-namespace InterfaceGenerator {
+namespace IvmpDotNet.InterfaceGenerator {
     static class NativeToCLRType {
         public static string Convert(string nativeType, bool retType) {
             string str = nativeType.ToLower().Replace(" ", "");

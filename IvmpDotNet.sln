@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet", "IvmpDotNet\IvmpDotNet.csproj", "{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet.Core", "IvmpDotNet.Core\IvmpDotNet.Core.csproj", "{A9B0CFBD-67D4-427D-9B5C-111350F8BC3D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IvmpDotNetWrapper", "IvmpDotNetWrapper\IvmpDotNetWrapper.vcxproj", "{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IvmpDotNet.Proxy", "IvmpDotNet.Proxy\IvmpDotNet.Proxy.vcxproj", "{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}"
 EndProject
 Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "\svr\ivmp-svr.exe", "{30E72F24-2F8C-4753-A90C-10287F7028B2}"
 	ProjectSection(DebuggerProjectSystem) = preProject
@@ -17,7 +17,7 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "ivmp-svr", "\svr\ivmp-svr.e
 		AttachLaunchAction = No
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceGenerator", "InterfaceGenerator\InterfaceGenerator.csproj", "{D42047BF-F9AB-477E-8468-51085CBF7E50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet.InterfaceGenerator", "IvmpDotNet.InterfaceGenerator\IvmpDotNet.InterfaceGenerator.csproj", "{D42047BF-F9AB-477E-8468-51085CBF7E50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvmpDotNet.SDK", "IvmpDotNet.SDK\IvmpDotNet.SDK.csproj", "{3FDC1EED-42A9-4F22-B088-6FA94B3C6255}"
 EndProject

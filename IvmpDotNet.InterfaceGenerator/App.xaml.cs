@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace InterfaceGenerator {
+namespace IvmpDotNet.InterfaceGenerator {
     /// <summary>
     /// Interaktionslogik für "App.xaml"
     /// </summary>

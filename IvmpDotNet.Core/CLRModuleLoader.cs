@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IvmpDotNet {
+namespace IvmpDotNet.Core {
     //[Serializable]
     static class CLRModuleLoader {
         static AppDomain _moduleDomain;
@@ -48,7 +48,7 @@ namespace IvmpDotNet {
                             if (moduleInterface != null) {
                                 IvmpDotNet.SDK.IModule mod = (IvmpDotNet.SDK.IModule)Activator.CreateInstance(type);
                                 IvmpDotNetCore.Singleton.Log("Loading CLR Module {0}", System.IO.Path.GetFileName(modPath));
-                                mod.Load(IvmpDotNet.IvmpDotNetCore.Singleton);
+                                mod.Load(IvmpDotNetCore.Singleton);
                             }
                         }
                     }

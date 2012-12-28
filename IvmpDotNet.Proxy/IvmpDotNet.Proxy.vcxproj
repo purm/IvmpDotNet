@@ -14,7 +14,7 @@
     <ProjectGuid>{3CF9FB83-1059-47AC-AFA7-BF8D1366AB64}</ProjectGuid>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>IvmpDotNetWrapper</RootNamespace>
+    <RootNamespace>IvmpDotNet.Proxy</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -134,7 +134,7 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IvmpDotNet\IvmpDotNet.csproj">
+    <ProjectReference Include="..\IvmpDotNet.Core\IvmpDotNet.Core.csproj">
       <Project>{a9b0cfbd-67d4-427d-9b5c-111350f8bc3d}</Project>
     </ProjectReference>
   </ItemGroup>
