@@ -35,6 +35,8 @@ namespace IvmpDotNet {
             }
         }
 
+        #region Managers
+
         private EventManager _eventManager = new EventManager();
         private PlayerManager _playerManager = new PlayerManager();
         private ServerManager _serverManager = new ServerManager();
@@ -49,6 +51,64 @@ namespace IvmpDotNet {
         private HashManager _hashManager = new HashManager();
         private WorldManager _worldManager = new WorldManager();
         private NetworkManager _networkManager = new NetworkManager();
+
+        public SDK.IEvents EventManager {
+            get { return this._eventManager; }
+        }
+
+        public SDK.IPlayerManager PlayerManager {
+            get { return _playerManager; }
+        }
+
+        public SDK.IServerManager ServerManager {
+            get { return _serverManager; }
+        }
+
+        public SDK.IActorManager ActorManager {
+            get { return _actorManager; }
+        }
+
+        public SDK.IBlipManager BlipManager {
+            get { return _blipManager; }
+        }
+
+        public SDK.ICheckPointManager CheckpointManager {
+            get { return _checkpointManager; }
+        }
+
+        public SDK.IVehicleManager VehicleManager {
+            get { return _vehicleManager; }
+        }
+
+        public SDK.IScriptManager ScriptManager {
+            get { return _scriptManager; }
+        }
+
+        public SDK.IAreaManager AreaManager {
+            get { return _areaManager; }
+        }
+
+        public SDK.IObjectManager ObjectManager {
+            get { return _objectManager; }
+        }
+
+        public SDK.IPickupManager PickupManager {
+            get { return _pickupManager; }
+        }
+
+        public SDK.IHashManager HashManager {
+            get { return _hashManager; }
+        }
+
+        public SDK.IWorldManager WorldManager {
+            get { return _worldManager; }
+        }
+
+        public SDK.INetworkManager NetworkManager {
+            get { return _networkManager; }
+        }
+
+        #endregion
 
         #endregion
 
@@ -129,70 +189,5 @@ namespace IvmpDotNet {
         }
 
         #endregion
-
-        public SDK.IEvents EventManager {
-            get { return this._eventManager; }
-        }
-
-        public SDK.IPlayerManager PlayerManager {
-            get { return _playerManager; }
-        }
-
-
-        public SDK.IServerManager ServerManager {
-            get { return _serverManager; }
-        }
-
-
-        public SDK.IActorManager ActorManager {
-            get { return _actorManager; }
-        }
-
-        public SDK.IBlipManager BlipManager {
-            get { return _blipManager; }
-        }
-
-
-        public SDK.ICheckPointManager CheckpointManager {
-            get { return _checkpointManager; }
-        }
-
-        public SDK.IVehicleManager VehicleManager {
-            get { return _vehicleManager; }
-        }
-
-
-        public SDK.IScriptManager ScriptManager {
-            get { return _scriptManager; }
-        }
-
-        public SDK.IAreaManager AreaManager {
-            get { return _areaManager; }
-        }
-
-
-        public SDK.IObjectManager ObjectManager {
-            get { return _objectManager; }
-        }
-
-
-        public SDK.IPickupManager PickupManager {
-            get { return _pickupManager; }
-        }
-
-
-        public SDK.IHashManager HashManager {
-            get { return _hashManager; }
-        }
-
-
-        public SDK.IWorldManager WorldManager {
-            get { return _worldManager; }
-        }
-
-
-        public SDK.INetworkManager NetworkManager {
-            get { return _networkManager; }
-        }
     }
 }

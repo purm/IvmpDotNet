@@ -14,10 +14,5 @@ namespace IvmpDotNet.SDK {
         /// </summary>
         /// <param name="coreManager">The interface to ivmp</param>
         void Load(ICoreManager coreManager);
-
-        ///// <summary>
-        ///// Called when the module is unloading
-        ///// </summary>
-        //void Unload();
     }
 }
