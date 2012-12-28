@@ -78,8 +78,8 @@ namespace IvmpDotNet.Wrappings {
             return Actors.Actors_RemoveFromVehicle(ActorId);
         }
 
-        public bool WarpIntoVehicle(int vehicleid, int seatid) {
-            return Actors.Actors_WarpIntoVehicle(ActorId, vehicleid, seatid);
+        public bool WarpIntoVehicle(IVehicle vehicle, int seatid) {
+            return Actors.Actors_WarpIntoVehicle(ActorId, vehicle.VehicleId, seatid);
         }
 
         public bool Delete() {
