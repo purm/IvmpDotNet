@@ -76,6 +76,13 @@ namespace IvmpDotNet.SampleCLRModule {
                     Z = 267.583008f
                 });
 
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = TimeSpan.FromSeconds(10).TotalMilliseconds;
+            timer.Elapsed += (o, e) => {
+                coreManager.PlayerManager.SendMessageToAll("SPAAAM", 0, false);
+            };
+            timer.Start();
+
             Console.WriteLine("ASDF: {0}", coreManager.ServerManager.GetWeaponName(10));
             Console.WriteLine("Loaded Sample CLR Module CHANGEtest");
         }
