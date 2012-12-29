@@ -1,4 +1,4 @@
-IvmpDotNet
+IvmpDot .Net
 ==========
 
 A .Net wrapper for the IV:MP Module SDK
