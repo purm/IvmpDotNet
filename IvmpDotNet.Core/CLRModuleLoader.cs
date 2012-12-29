@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace IvmpDotNet.Core {
-    //[Serializable]
+    [Serializable]
     public class CLRModuleLoader {
         public AppDomain ModuleDomain { get; private set; }
 
@@ -38,7 +38,7 @@ namespace IvmpDotNet.Core {
             IvmpDotNetCore.Singleton.Log("Unhandled Exception - CLR Shutdown: {0} - Exception: {1}", e.IsTerminating, e.ExceptionObject.ToString());
         }
 
-        private void Initializing(string[] args) {
+        private static void Initializing(string[] args) {
             foreach (string modPath in args) {
                 Assembly assembly = Assembly.LoadFrom(modPath);
                 foreach (var type in assembly.GetTypes()) {
