@@ -7,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet.SampleCLRModule {
     public class ExampleModule : IModule {
-        IvmpDotNet.SDK.IVehicle vehicle;
+        System.Timers.Timer timer;
+        List<IvmpDotNet.SDK.IVehicle> vehicles;
         ICoreManager coreManager;
-
-        string test = "asdf";
 
         void EventManager_PlayerCommand(object sender, SDK.PlayerCommandArgs e) {
             foreach (string cmd in e.Command) {
                 e.Player.SendMessage("ASDF: " + cmd, 0, false);
             }
 
-            //if (e.Command[0] == "/unload") {
-            //    UnloadCLRModule();
-            //} else
             if (e.Command[0] == "/asdf") {
                 e.Player.SendMessage("You entered valid message", 0, false);
                 e.Player.GiveWeapon(18, 1337);
@@ -39,57 +35,60 @@ namespace IvmpDotNet.SampleCLRModule {
         }
 
         public void Load(ICoreManager mgr) {
-            test = "bla";
             coreManager = mgr;
 
             coreManager.EventManager.PlayerSpawn += EventManager_PlayerSpawn;
             coreManager.EventManager.PlayerCommand += EventManager_PlayerCommand;
-            coreManager.EventManager.ConsoleInput += (o, e) => {
-                Console.WriteLine("'{0}'", e.Text);
+
+            vehicles = new List<IVehicle>() {
+                coreManager.VehicleManager.Create(
+                    40,
+                    new SDK.CVector3() {
+                        X = 1657.118408f,
+                        Y = 421.462982f,
+                        Z = 28.569500f
+                    },
+                    new SDK.CVector3() {
+                        X = 359.828613f,
+                        Y = 352.884033f,
+                        Z = 267.583008f
+                    },
+                    0, 0, 0, 0, -1),
+                coreManager.VehicleManager.Create(
+                    17,
+                    new SDK.CVector3() {
+                        X = 1657.118408f,
+                        Y = 421.462982f,
+                        Z = 128.569500f
+                    },
+                    new SDK.CVector3() {
+                        X = 359.828613f,
+                        Y = 352.884033f,
+                        Z = 267.583008f
+                    },
+                    0, 0, 0, 0, -1)
             };
 
-            //coreManager.NetworkManager.AddBan("test", 123);
-
-            //vehicle = coreManager.VehicleManager.Create(
-            //    40,
-            //    new SDK.CVector3() {
-            //        X = 1657.118408f,
-            //        Y = 421.462982f,
-            //        Z = 28.569500f
-            //    },
-            //    new SDK.CVector3() {
-            //        X = 359.828613f,
-            //        Y = 352.884033f,
-            //        Z = 267.583008f
-            //    },
-            //    0, 0, 0, 0, -1);
-
-            coreManager.PickupManager.Create(PickupModels.DesertEagle, PickupTypes.CanPickup, 999,
-                new SDK.CVector3() {
-                    X = 1657.118408f,
-                    Y = 421.462982f,
-                    Z = 28.569500f
-                },
-                new SDK.CVector3() {
-                    X = 359.828613f,
-                    Y = 352.884033f,
-                    Z = 267.583008f
-                });
-
-            System.Timers.Timer timer = new System.Timers.Timer();
+            timer = new System.Timers.Timer();
             timer.Interval = TimeSpan.FromSeconds(10).TotalMilliseconds;
-            timer.Elapsed += (o, e) => {
-                coreManager.PlayerManager.SendMessageToAll("SPAAAM", 0, false);
-            };
+            timer.Elapsed += timer_Elapsed;
             timer.Start();
 
-            Console.WriteLine("ASDF: {0}", coreManager.ServerManager.GetWeaponName(10));
-            Console.WriteLine("Loaded Sample CLR Module CHANGEtest");
+            Console.WriteLine("Loaded Sample CLR Module");
+        }
+
+        void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e) {
+            coreManager.PlayerManager.SendMessageToAll("SPAAAM", 0, false);
         }
 
 
         public void Unload() {
-            Console.WriteLine("Example Module is unloading");
+            timer.Elapsed -= timer_Elapsed;
+            coreManager.EventManager.PlayerSpawn -= EventManager_PlayerSpawn;
+            coreManager.EventManager.PlayerCommand -= EventManager_PlayerCommand;
+
+            foreach (var vehicle in vehicles)
+                vehicle.Delete();
         }
     }
 }

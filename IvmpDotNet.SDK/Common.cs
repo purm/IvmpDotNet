@@ -13,6 +13,161 @@ namespace IvmpDotNet.SDK {
     public class FrequentlyEventAttribute : Attribute { }
 
     /// <summary>
+    /// Blip types
+    /// </summary>
+    public enum Blips : int {
+        Destination = 0,
+        Destination1 = 1,
+        Destination2 = 2,
+        Objective = 3,
+        Objective1 = 4,
+        Objective2 = 5,
+        Player = 6,
+        North = 7,
+        Waypoint = 8,
+        Pistol = 9,
+        Shotgun = 10,
+        Smg = 11,
+        Rofle = 12,
+        Rocket = 13,
+        Grenade = 14,
+        Molotov = 15,
+        Sniper = 16,
+        BaseballBat = 17,
+        Knife = 18,
+        Health = 19,
+        Armor = 20,
+        BurgerShot = 21,
+        CluckinBell = 22,
+        Vlad = 23,
+        Internet = 24,
+        Manny = 25,
+        LittleJacob = 26,
+        Roman = 27,
+        Faustin = 28,
+        Safehouse = 29,
+        TaxiRank = 30,
+        Bernie = 31,
+        Brucie = 32,
+        UnknownContact = 33,
+        Dwayne = 34,
+        Elizabeta = 35,
+        Gambetti = 36,
+        JimmyPegorino = 37,
+        Derrick = 38,
+        Francis = 39,
+        Gerry = 40,
+        Katie = 41,
+        Packie = 42,
+        PhilBell = 43,
+        PlayboyX = 44,
+        RayBoccino = 45,
+        EightBall = 46,
+        Bar = 47,
+        BoatTour = 48,
+        Bowling = 49,
+        ClothesShop = 50,
+        Club = 51,
+        Darts = 52,
+        DwayneRed = 53,
+        Date = 54,
+        PlayboXRed = 55,
+        Helitour = 56,
+        Restaurant = 57,
+        Station = 58,
+        Weapons = 59,
+        PoliceStation = 60,
+        FireStation = 61,
+        Hospital = 62,
+        Male = 63,
+        Female = 64,
+        FinishLine = 65,
+        StripClub = 66,
+        ConsoleGame = 67,
+        CopCar = 68,
+        Dimitri = 69,
+        ComedyClub = 70,
+        CabaretClub = 71,
+        Ransom = 72,
+        CopChopper = 73,
+        Michelle = 74,
+        PayNSpray = 75,
+        Assassin = 76,
+        Revenge = 77,
+        Deal = 78,
+        Garage = 79,
+        Lawyer = 80,
+        Trophy = 81,
+        MultiplayerTutorial = 82,
+        Station3 = 83,
+        Station8 = 84,
+        Stationa = 85,
+        Stationb = 86,
+        Stationc = 87,
+        Statione = 88,
+        Stationj = 89,
+        Stationk = 90,
+        CarWash = 91,
+        UnitedLibertyPaper = 92,
+        Boss = 93,
+        Base = 94
+    }
+
+    /// <summary>
+    /// The bodyparts of an player
+    /// </summary>
+    public enum Bodyparts : int {
+        Head = 0,
+        UpperBody = 1,
+        LowerBody = 2,
+        Special1 = 3,
+        Hand = 4,
+        Feet = 5,
+        Jacket = 6,
+        Hair = 7,
+        Special2 = 8,
+        Face = 10
+    }
+
+    /// <summary>
+    /// The Weapons
+    /// </summary>
+    public enum Weapons : int {
+        BaseballBat = 1,
+        PoolCue = 2,
+        Knife = 3,
+        Grenade = 4,
+        Molotov = 5,
+        Glock = 7,
+        DesertEagle = 9,
+        PumpShotgun = 10,
+        CombatShutgon = 11,
+        MicroUzi = 12,
+        Mp10 = 13,
+        Ak47 = 14,
+        M4 = 15,
+        PSG1 = 16,
+        Remington700 = 17,
+        RPG7 = 18
+    }
+
+    /// <summary>
+    /// There are various state types.
+    /// </summary>
+    public enum StateTypes : int {
+        Disconnect = 0,
+        Connect = 1,
+        Spawn = 2,
+        Death = 3,
+        OnFoot = 4,
+        EnterCar = 5,
+        InVehicle = 6,
+        Passenger = 7,
+        ExitVehicle = 8,
+        EnterVehicle = 9
+    }
+
+    /// <summary>
     /// The possible models for pickups
     /// </summary>
     public enum PickupModels : uint {

@@ -25,8 +25,8 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public bool GiveWeapon(int iWeaponId, int iAmmo) {
-            return Imports.Players.Players_GiveWeapon(this.PlayerId, iWeaponId, iAmmo);
+        public bool GiveWeapon(SDK.Weapons iWeapon, int iAmmo) {
+            return Imports.Players.Players_GiveWeapon(this.PlayerId, (int)iWeapon, iAmmo);
         }
 
         public bool RemoveWeapons() {
@@ -76,8 +76,12 @@ namespace IvmpDotNet.Wrappings {
             get { return Players.Players_IsInAnyVehicle(this.PlayerId); }
         }
 
-        public ushort VehicleId {
-            get { return Players.Players_GetVehicleId(this.PlayerId); }
+        public IvmpDotNet.SDK.IVehicle Vehicle {
+            get {
+                return new Vehicle() {
+                    VehicleId = Players.Players_GetVehicleId(this.PlayerId)
+                };
+            }
         }
 
         public int SeatId {
@@ -139,11 +143,11 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public int State {
-            get { return Players.Players_GetState(PlayerId); }
+        public SDK.StateTypes State {
+            get { return (SDK.StateTypes)Players.Players_GetState(PlayerId); }
         }
 
-        public SDK.CVector3 Velocty {
+        public SDK.CVector3 Velocity {
             get {
                 return Players.Players_GetVelocity(PlayerId);
             }
@@ -152,8 +156,8 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public int Weapon {
-            get { return Players.Players_GetWeapon(PlayerId); }
+        public SDK.Weapons Weapon {
+            get { return (SDK.Weapons)Players.Players_GetWeapon(PlayerId); }
         }
 
         public int Ammo {
@@ -202,7 +206,7 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public int[] Clothes {
+        public Dictionary<SDK.Bodyparts, int> Clothes {
             get { throw new NotImplementedException(); }
         }
 
@@ -301,8 +305,8 @@ namespace IvmpDotNet.Wrappings {
             return Players.Players_ResetClothes(PlayerId);
         }
 
-        public bool SetClothes(int iBodyPart, int iClothes) {
-            return Players.Players_SetClothes(PlayerId, iBodyPart, iClothes);
+        public bool SetClothes(SDK.Bodyparts iBodyPart, int iClothes) {
+            return Players.Players_SetClothes(PlayerId, (int)iBodyPart, iClothes);
         }
 
         public bool SetCameraBehind() {
@@ -313,8 +317,8 @@ namespace IvmpDotNet.Wrappings {
             return Players.Players_RemoveFromVehicle(PlayerId, bGraceful);
         }
 
-        public bool WarpIntoVehicle(ushort vehicleId, int iSeatId) {
-            return Players.Players_WarpIntoVehicle(PlayerId, vehicleId, iSeatId);
+        public bool WarpIntoVehicle(SDK.IVehicle vehicle, int iSeatId) {
+            return Players.Players_WarpIntoVehicle(PlayerId, vehicle.VehicleId, iSeatId);
         }
 
         public bool DisplayText(float fPosX, float fPosY, string szText, int iTime) {
@@ -337,8 +341,8 @@ namespace IvmpDotNet.Wrappings {
             return Players.Players_SetSpawnLocation(PlayerId, vecPos, fRotation);
         }
 
-        public bool IsInVehicle(ushort vehicleId) {
-            return Players.Players_IsInVehicle(PlayerId, vehicleId);
+        public bool IsInVehicle(SDK.IVehicle vehicle) {
+            return Players.Players_IsInVehicle(PlayerId, vehicle.VehicleId);
         }
 
         public bool SetTime(byte iHour, byte iMinute) {
@@ -358,8 +362,8 @@ namespace IvmpDotNet.Wrappings {
         }
 
 
-        public bool CreatePlayerBlip(int iSprite) {
-            return Blips.Blips_CreatePlayerBlip(PlayerId, iSprite);
+        public bool CreatePlayerBlip(SDK.Blips iSprite) {
+            return Blips.Blips_CreatePlayerBlip(PlayerId, (int)iSprite);
         }
 
         public bool DeletePlayerBlip() {
