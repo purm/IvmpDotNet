@@ -65,6 +65,7 @@ namespace IvmpDotNet.Core {
         public void UnloadModules() {
             IvmpDotNetCore.Singleton.Log("Unloading Modules");
             AppDomain.Unload(ModuleDomain);
+            ModuleDomain = null;
             IvmpDotNetCore.Singleton.Log("All modules were unloaded");
         }
 

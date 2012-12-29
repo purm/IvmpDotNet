@@ -122,6 +122,9 @@ namespace IvmpDotNet.Core {
         public bool InitModule(out string moduleName) {
             moduleName = ModuleName;
 
+            AppDomain.CurrentDomain.SetData("asd", "asdf");
+            AppDomain.CurrentDomain.SetData("asd", "asdf");
+
             //Console.WriteLine("[{0}] InitModule", ModuleName);
             Log("[Initializing...");
 
@@ -142,7 +145,7 @@ namespace IvmpDotNet.Core {
         }
 
         private void ExecuteTextCommand(string command) {
-            string[] args = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] args = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.ToLower().Trim()).ToArray();
             if (args.Length < 1)
                 return;
 

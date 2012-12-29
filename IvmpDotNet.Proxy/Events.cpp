@@ -35,8 +35,29 @@ public:
 		IVMP::Events::Manager()->AddModuleEvent("playerCommand", event_playerCommand);
 	}
 
+	static void RaiseServerPulse() {
+		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaiseServerPulse());
+	}
+
 	static void RaiseConsoleInput() {
-		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaiseConsoleInput((System::String^)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_1")));
+		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaiseConsoleInput(
+			(System::String^)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_1")));
+	}
+
+	static void RaiseConsoleOutput() {
+		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaiseConsoleOutput(
+			(System::String^)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_1")));
+	}
+
+	static void RaisePlayerSpawn() {
+		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaisePlayerSpawn(
+			(int)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_1")));
+	}
+
+	static void RaisePlayerCommand() {
+		SetReturnValue(IvmpDotNetCore::Singleton->EventHandler->RaisePlayerCommand(
+			(int)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_1"), 
+			(System::String^)System::AppDomain::CurrentDomain->GetData("_EVENT_PARAM_2")));
 	}
 };
 
@@ -44,34 +65,73 @@ void RegisterEvents() {
 	EventRegisterManager::RegisterEvents();
 }
 
+inline bool ExistsModuleDomain(SquirrelArgumentInterface* pReturn) {
+	return IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain != nullptr;
+}
+
 void event_serverPulse(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
-	pReturn->SetInteger(IvmpDotNetCore::Singleton->EventHandler->RaiseServerPulse());
+	if(!ExistsModuleDomain(pReturn)) {
+		pReturn->SetInteger(1);
+		return;
+	}
+
+	IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->DoCallBack(gcnew System::CrossAppDomainDelegate(EventRegisterManager::RaiseServerPulse));
+
+	pReturn->SetInteger(EventRegisterManager::GetReturnData());
 }
 
 void event_consoleInput(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
 	System::String^ text = gcnew System::String(pArguments->Get(0)->GetString());
 
-	//Set Parameters
-	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_1", text);
+	//Call this event also in default appDomain, so that it can be handled internally
 	System::AppDomain::CurrentDomain->SetData("_EVENT_PARAM_1", text);
+	EventRegisterManager::RaiseConsoleInput();
+
+	if(!ExistsModuleDomain(pReturn)) {
+		pReturn->SetInteger(1);
+		return;
+	}
 
 	//Call in Module-Appdomain
+	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_1", text);
 	IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->DoCallBack(gcnew System::CrossAppDomainDelegate(EventRegisterManager::RaiseConsoleInput));
-
-	//Call this event also in default appDomain, so that it can be handled internally
-	EventRegisterManager::RaiseConsoleInput();
 
 	pReturn->SetInteger(EventRegisterManager::GetReturnData());
 }
 
 void event_consoleOutput(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
-	pReturn->SetInteger(IvmpDotNetCore::Singleton->EventHandler->RaiseConsoleOutput(gcnew System::String(pArguments->Get(0)->GetString())));
+	if(!ExistsModuleDomain(pReturn)) {
+		pReturn->SetInteger(1);
+		return;
+	}
+
+	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_1", gcnew System::String(pArguments->Get(0)->GetString()));
+	IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->DoCallBack(gcnew System::CrossAppDomainDelegate(EventRegisterManager::RaiseConsoleOutput));
+
+	pReturn->SetInteger(EventRegisterManager::GetReturnData());
 }
 
 void event_playerSpawn(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
-	pReturn->SetInteger(IvmpDotNetCore::Singleton->EventHandler->RaisePlayerSpawn(pArguments->Get(0)->GetInteger()));
+	if(!ExistsModuleDomain(pReturn)) {
+		pReturn->SetInteger(1);
+		return;
+	}
+
+	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_1", pArguments->Get(0)->GetInteger());
+	IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->DoCallBack(gcnew System::CrossAppDomainDelegate(EventRegisterManager::RaisePlayerSpawn));
+
+	pReturn->SetInteger(EventRegisterManager::GetReturnData());
 }
 
 void event_playerCommand(SquirrelArgumentsInterface* pArguments, SquirrelArgumentInterface* pReturn, void* pChunk) {
-	pReturn->SetInteger(IvmpDotNetCore::Singleton->EventHandler->RaisePlayerCommand(pArguments->Get(0)->GetInteger(), gcnew System::String(pArguments->Get(1)->GetString())));
+	if(!ExistsModuleDomain(pReturn)) {
+		pReturn->SetInteger(1);
+		return;
+	}
+
+	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_1", pArguments->Get(0)->GetInteger());
+	IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->SetData("_EVENT_PARAM_2", gcnew System::String(pArguments->Get(1)->GetString()));
+	IvmpDotNet::Core::IvmpDotNetCore::Singleton->ModuleLoader->ModuleDomain->DoCallBack(gcnew System::CrossAppDomainDelegate(EventRegisterManager::RaisePlayerCommand));
+
+	pReturn->SetInteger(EventRegisterManager::GetReturnData());
 }
