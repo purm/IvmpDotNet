@@ -63,7 +63,8 @@
       </AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"</Command>
+      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"
+xcopy /Y "$(OutDir)Interop.mscoree.2.4.dll" "$(SolutionDir)svr"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,7 +80,8 @@
       </AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"</Command>
+      <Command>xcopy /Y "$(OutDir)$(TargetFileName)" "$(SolutionDir)svr\modules"
+xcopy /Y "$(OutDir)Interop.mscoree.2.4.dll" "$(SolutionDir)svr"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -137,6 +139,16 @@
     <ProjectReference Include="..\IvmpDotNet.Core\IvmpDotNet.Core.csproj">
       <Project>{a9b0cfbd-67d4-427d-9b5c-111350f8bc3d}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="mscoree.2.4.dll">
+      <Guid>5477469e-83b1-11d2-8b49-00a0c9b7c9c4</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,7 +17,7 @@ namespace IvmpDotNet.Core {
         /// <param name="path">path to search for CLR Modules</param>
         public void LoadModules(string path) {
             IvmpDotNetCore.Singleton.Log("Loading Modules");
-
+            //ModuleDomain.DoCallBack(
             List<string> modules = new List<string>();
             DirectoryInfo di = new DirectoryInfo(path);
             FileInfo[] fls = di.GetFiles("*.dll");
@@ -29,6 +29,7 @@ namespace IvmpDotNet.Core {
             AppDomainSetup setup = new AppDomainSetup();
             setup.AppDomainInitializer = new AppDomainInitializer(Initializing);
             setup.AppDomainInitializerArguments = modules.ToArray();
+            setup.PrivateBinPath = "Modules";
 
             ModuleDomain = AppDomain.CreateDomain("IvmpClrModulesDomain", System.AppDomain.CurrentDomain.Evidence, setup);
             ModuleDomain.UnhandledException += _moduleDomain_UnhandledException;

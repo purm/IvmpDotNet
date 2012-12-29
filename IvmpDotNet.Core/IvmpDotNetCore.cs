@@ -34,7 +34,11 @@ namespace IvmpDotNet.Core {
                 return _eventManager;
             }
         }
-        public CLRModuleLoader ModuleLoader = new CLRModuleLoader();
+
+        private CLRModuleLoader _moduleLoader = new CLRModuleLoader();
+        public CLRModuleLoader ModuleLoader {
+            get { return _moduleLoader; }
+        }
 
         #region Managers
 

@@ -44,6 +44,9 @@ namespace IvmpDotNet.SampleCLRModule {
 
             coreManager.EventManager.PlayerSpawn += EventManager_PlayerSpawn;
             coreManager.EventManager.PlayerCommand += EventManager_PlayerCommand;
+            coreManager.EventManager.ConsoleInput += (o, e) => {
+                Console.WriteLine("'{0}'", e.Text);
+            };
 
             //coreManager.NetworkManager.AddBan("test", 123);
 
