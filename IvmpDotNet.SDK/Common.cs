@@ -99,16 +99,19 @@ namespace IvmpDotNet.SDK {
         /// <summary>
         /// X Coordinate
         /// </summary>
+        [System.ComponentModel.DefaultValue(0f)]
         public Single X { get; set; }
 
         /// <summary>
         /// Y Coordinate
         /// </summary>
+        [System.ComponentModel.DefaultValue(0f)]
         public Single Y { get; set; }
 
         /// <summary>
         /// Z Coordinate
         /// </summary>
+        [System.ComponentModel.DefaultValue(0f)]
         public Single Z { get; set; }
     }
 

@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet.Core {
     //[Serializable]
-    static class CLRModuleLoader {
-        static AppDomain _moduleDomain;
+    public class CLRModuleLoader {
+        public AppDomain ModuleDomain { get; private set; }
 
         /// <summary>
         /// Loads all the CLR modules in a given path
         /// </summary>
         /// <param name="path">path to search for CLR Modules</param>
-        public static void LoadModules(string path) {
+        public void LoadModules(string path) {
             IvmpDotNetCore.Singleton.Log("Loading Modules");
 
             List<string> modules = new List<string>();
@@ -30,15 +30,15 @@ namespace IvmpDotNet.Core {
             setup.AppDomainInitializer = new AppDomainInitializer(Initializing);
             setup.AppDomainInitializerArguments = modules.ToArray();
 
-            _moduleDomain = AppDomain.CreateDomain("IvmpClrModulesDomain", System.AppDomain.CurrentDomain.Evidence, setup);
-            _moduleDomain.UnhandledException += _moduleDomain_UnhandledException;
+            ModuleDomain = AppDomain.CreateDomain("IvmpClrModulesDomain", System.AppDomain.CurrentDomain.Evidence, setup);
+            ModuleDomain.UnhandledException += _moduleDomain_UnhandledException;
         }
 
-        static void _moduleDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e) {
-            throw new NotImplementedException();
+        void _moduleDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e) {
+            IvmpDotNetCore.Singleton.Log("Unhandled Exception - CLR Shutdown: {0} - Exception: {1}", e.IsTerminating, e.ExceptionObject.ToString());
         }
 
-        private static void Initializing(string[] args) {
+        private void Initializing(string[] args) {
             foreach (string modPath in args) {
                 Assembly assembly = Assembly.LoadFrom(modPath);
                 foreach (var type in assembly.GetTypes()) {
@@ -61,16 +61,16 @@ namespace IvmpDotNet.Core {
         /// <summary>
         /// Calls every CLRModules "UnloadCLRModule" Method(s)
         /// </summary>
-        public static void UnloadModules() {
+        public void UnloadModules() {
             IvmpDotNetCore.Singleton.Log("Unloading Modules");
-            AppDomain.Unload(_moduleDomain);
+            AppDomain.Unload(ModuleDomain);
             IvmpDotNetCore.Singleton.Log("All modules were unloaded");
         }
 
         /// <summary>
         /// Reloads all CLR Modules (if new were added to modules folder, they gonna be loaded, too);
         /// </summary>
-        public static void ReloadModules() {
+        public void ReloadModules() {
             UnloadModules();
             LoadModules(IvmpDotNetCore.ModulePath);
         }

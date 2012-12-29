@@ -34,6 +34,7 @@ namespace IvmpDotNet.Core {
                 return _eventManager;
             }
         }
+        public CLRModuleLoader ModuleLoader = new CLRModuleLoader();
 
         #region Managers
 
@@ -121,7 +122,7 @@ namespace IvmpDotNet.Core {
             Log("[Initializing...");
 
             //Loading all the CLR Modules
-            CLRModuleLoader.LoadModules(ModulePath);
+            ModuleLoader.LoadModules(ModulePath);
 
             EventManager.ConsoleInput += EventManager_ConsoleInput;
 
@@ -154,13 +155,13 @@ namespace IvmpDotNet.Core {
 
             switch (args[1]) {
                 case "load":
-                    CLRModuleLoader.LoadModules(ModulePath);
+                    ModuleLoader.LoadModules(ModulePath);
                     break;
                 case "unload":
-                    CLRModuleLoader.UnloadModules();
+                    ModuleLoader.UnloadModules();
                     break;
                 case "reload":
-                    CLRModuleLoader.ReloadModules();
+                    ModuleLoader.ReloadModules();
                     break;
                 default:
                     Log("unkwon command");

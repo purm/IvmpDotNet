@@ -25,7 +25,7 @@ namespace IvmpDotNet.SampleCLRModule {
                 e.Player.GiveWeapon(18, 1337);
             } else if (e.Command[0] == "/test") {
                 var obj = coreManager.ObjectManager.Create(2627789200, e.Player.Coordinates, new SDK.CVector3());
-                obj.AttachToPlayer(e.Player, e.Player.Coordinates, new SDK.CVector3(), -1);
+                obj.AttachToPlayer(e.Player, new CVector3(), new SDK.CVector3(), -1);
             } else {
                 e.Player.SendMessage("You entered Invalid Message", 0, false);
             }

@@ -4,6 +4,8 @@
 using namespace IvmpDotNet::Core;
 
 void RegisterEvents() {
+	//IvmpDotNetCore::Singleton::ModuleLoader->
+
 	//Server Events
 	IVMP::Events::Manager()->AddModuleEvent("serverPulse", event_serverPulse);
 	IVMP::Events::Manager()->AddModuleEvent("consoleInput", event_consoleInput);
