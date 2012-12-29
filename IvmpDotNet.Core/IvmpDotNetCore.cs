@@ -162,13 +162,25 @@ namespace IvmpDotNet.Core {
 
             switch (args[1]) {
                 case "load":
-                    ModuleLoader.LoadModules(ModulePath);
+                    try {
+                        ModuleLoader.LoadModules(ModulePath);
+                    } catch (InvalidOperationException) {
+                        Log("Modules are already loaded. You have to use 'unload' or 'reload' first");
+                    }
                     break;
                 case "unload":
-                    ModuleLoader.UnloadModules();
+                    try {
+                        ModuleLoader.UnloadModules();
+                    } catch (InvalidOperationException) {
+                        Log("Modules aren't loaded yet. You have to use 'load' first");
+                    }
                     break;
                 case "reload":
-                    ModuleLoader.ReloadModules();
+                    try {
+                        ModuleLoader.ReloadModules();
+                    } catch (InvalidOperationException) {
+                        Log("Modules aren't loaded yet. You have to use 'load' first");
+                    }
                     break;
                 default:
                     Log("unkwon command");

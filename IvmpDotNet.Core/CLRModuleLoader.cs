@@ -10,12 +10,20 @@ namespace IvmpDotNet.Core {
     [Serializable]
     public class CLRModuleLoader {
         public AppDomain ModuleDomain { get; private set; }
+        public bool AreModulesLoaded { get; private set; }
+
+        public CLRModuleLoader() {
+            AreModulesLoaded = false;
+        }
 
         /// <summary>
         /// Loads all the CLR modules in a given path
         /// </summary>
         /// <param name="path">path to search for CLR Modules</param>
         public void LoadModules(string path) {
+            if (AreModulesLoaded)
+                throw new InvalidOperationException();
+
             IvmpDotNetCore.Singleton.Log("Loading Modules");
             //ModuleDomain.DoCallBack(
             List<string> modules = new List<string>();
@@ -33,6 +41,8 @@ namespace IvmpDotNet.Core {
 
             ModuleDomain = AppDomain.CreateDomain("IvmpClrModulesDomain", System.AppDomain.CurrentDomain.Evidence, setup);
             ModuleDomain.UnhandledException += _moduleDomain_UnhandledException;
+
+            AreModulesLoaded = true;
         }
 
         void _moduleDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e) {
@@ -63,9 +73,13 @@ namespace IvmpDotNet.Core {
         /// Calls every CLRModules "UnloadCLRModule" Method(s)
         /// </summary>
         public void UnloadModules() {
+            if (!AreModulesLoaded)
+                throw new InvalidOperationException();
+
             IvmpDotNetCore.Singleton.Log("Unloading Modules");
             AppDomain.Unload(ModuleDomain);
             ModuleDomain = null;
+            AreModulesLoaded = false;
             IvmpDotNetCore.Singleton.Log("All modules were unloaded");
         }
 
