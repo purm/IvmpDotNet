@@ -86,5 +86,10 @@ namespace IvmpDotNet.SampleCLRModule {
             Console.WriteLine("ASDF: {0}", coreManager.ServerManager.GetWeaponName(10));
             Console.WriteLine("Loaded Sample CLR Module CHANGEtest");
         }
+
+
+        public void Unload() {
+            Console.WriteLine("Example Module is unloading");
+        }
     }
 }
