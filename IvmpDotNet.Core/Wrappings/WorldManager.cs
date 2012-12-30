@@ -15,8 +15,8 @@ namespace IvmpDotNet.Wrappings {
             return Imports.World.World_SetMinuteDuration(iMinuteDuration);
         }
 
-        public bool SetDayOfWeek(int iDay) {
-            return Imports.World.World_SetDayOfWeek(iDay);
+        public bool SetDayOfWeek(DaysOfWeek iDay) {
+            return Imports.World.World_SetDayOfWeek((int)iDay);
         }
 
         public bool SetTrafficLightsState(int iState) {
@@ -27,8 +27,8 @@ namespace IvmpDotNet.Wrappings {
             return Imports.World.World_SetTrafficLightsLocked(b);
         }
 
-        public bool SetTrafficLightsPhaseDuration(int iPhase, int iDuration) {
-            return Imports.World.World_SetTrafficLightsPhaseDuration(iPhase, iDuration);
+        public bool SetTrafficLightsPhaseDuration(TrafficLightPhases iPhase, int iDuration) {
+            return Imports.World.World_SetTrafficLightsPhaseDuration((int)iPhase, iDuration);
         }
     }
 }

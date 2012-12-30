@@ -13,6 +13,28 @@ namespace IvmpDotNet.SDK {
     public class FrequentlyEventAttribute : Attribute { }
 
     /// <summary>
+    /// The phases of a traffic light
+    /// </summary>
+    public enum TrafficLightPhases : int {
+        Green = 1,
+        Yellow = 2,
+        Red = 3
+    }
+
+    /// <summary>
+    /// the week days
+    /// </summary>
+    public enum DaysOfWeek : int {
+        Sunday = 0,
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6
+    }
+
+    /// <summary>
     /// a vehicle's doors
     /// </summary>
     public enum VehicleDoors : int {
