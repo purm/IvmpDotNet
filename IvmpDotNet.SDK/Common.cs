@@ -13,9 +13,30 @@ namespace IvmpDotNet.SDK {
     public class FrequentlyEventAttribute : Attribute { }
 
     /// <summary>
+    /// a vehicle's doors
+    /// </summary>
+    public enum VehicleDoors : int {
+        Driver = 0,
+        FirstPassenger = 1,
+        SecondPassenger = 2,
+        ThirdPassenger = 3,
+        Hood = 4,
+        Trunk = 5
+    }
+
+    /// <summary>
+    /// Locking states of vehicle doors
+    /// </summary>
+    public enum LockedState : int {
+        Unlocked = 0,
+        Locked = 1,
+        LockedWithBreakableGlass = 2
+    }
+
+    /// <summary>
     /// weather types
     /// </summary>
-    public enum WeatherTypes :int {
+    public enum WeatherTypes : int {
         ExtraSunny = 1,
         Sunny = 2,
         SunnyAndWindy = 3,

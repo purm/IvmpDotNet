@@ -207,8 +207,8 @@ namespace IvmpDotNet.Wrappings {
             return Vehicles.Vehicles_SwitchTaxiLights(this.VehicleId, check);
         }
 
-        public bool ControlCarDoors(int door, bool door2, float door3) {
-            return Vehicles.Vehicles_ControlCarDoors(this.VehicleId, door, door2, door3);
+        public bool ControlCarDoors(VehicleDoors door, bool door2, float door3) {
+            return Vehicles.Vehicles_ControlCarDoors(this.VehicleId, (int)door, door2, door3);
         }
 
         public bool RepairWheels() {
@@ -221,6 +221,18 @@ namespace IvmpDotNet.Wrappings {
 
         public bool Repair() {
             return Vehicles.Vehicles_Repair(this.VehicleId);
+        }
+
+        public bool[] GetIndicators() {
+            throw new NotImplementedException();
+        }
+
+        public bool SetComponent(int iSlot, bool bOn) {
+            throw new NotImplementedException();
+        }
+
+        public bool[] GetComponents() {
+            throw new NotImplementedException();
         }
     }
 }
