@@ -226,6 +226,13 @@ namespace IvmpDotNet.SDK {
         #region Methods
 
         /// <summary>
+        /// Removes the player from the server
+        /// </summary>
+        /// <param name="byteReason">???</param>
+        /// <returns>Returns true if successful, false otherwise.</returns>
+        bool Remove(Byte byteReason);
+
+        /// <summary>
         /// blocks or enables dropping of weapons on death for the player.
         /// </summary>
         /// <param name="btoggle">true = drop</param>

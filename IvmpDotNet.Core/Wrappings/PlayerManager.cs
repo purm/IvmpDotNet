@@ -29,10 +29,6 @@ namespace IvmpDotNet.Wrappings {
             Imports.GetPlayerManager.GetPlayerManager_Add(playerId, sPlayerName);
         }
 
-        public bool Remove(ushort playerId, byte byteReason) {
-            return Imports.GetPlayerManager.GetPlayerManager_Remove(playerId, byteReason);
-        }
-
         public bool IsNameInUse(string szNick) {
             return Imports.GetPlayerManager.GetPlayerManager_IsNameInUse(szNick);
         }

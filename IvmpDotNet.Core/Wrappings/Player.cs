@@ -377,5 +377,9 @@ namespace IvmpDotNet.Wrappings {
         public bool TogglePlayerShortRange(bool bToggle) {
             return Blips.Blips_TogglePlayerShortRange(PlayerId, bToggle);
         }
+
+        public bool Remove(byte byteReason) {
+            return Imports.GetPlayerManager.GetPlayerManager_Remove(PlayerId, byteReason);
+        }
     }
 }

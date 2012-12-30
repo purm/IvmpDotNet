@@ -8,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace IvmpDotNet.Wrappings {
     public class ServerManager : IServerManager {
-        public void Log(string txt) {
-            Server.Server_Log(txt);
-        }
-
         public void Log(string txt, params object[] args) {
-            Log(string.Format(txt, args));
+            Server.Server_Log(string.Format(txt, args));
         }
 
         public void AddRule(string rule, string value) {
@@ -52,8 +48,8 @@ namespace IvmpDotNet.Wrappings {
             Server.Server_SendInput(input);
         }
 
-        public string GetWeaponName(int iWeaponId) {
-            return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Server.Server_GetWeaponName(iWeaponId));
+        public string GetWeaponName(Weapons iWeaponId) {
+            return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Server.Server_GetWeaponName((int)iWeaponId));
         }
 
         public string GetVehicleName(int iModelId) {
@@ -64,8 +60,8 @@ namespace IvmpDotNet.Wrappings {
             Server.Server_ToggleFrequentEvents(bToggle);
         }
 
-        public bool SetWeather(int iWeather) {
-            return Server.Server_SetWeather(iWeather);
+        public bool SetWeather(WeatherTypes iWeather) {
+            return Server.Server_SetWeather((int)iWeather);
         }
 
         public bool ForceWind(float fWind) {

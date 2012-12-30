@@ -13,6 +13,22 @@ namespace IvmpDotNet.SDK {
     public class FrequentlyEventAttribute : Attribute { }
 
     /// <summary>
+    /// weather types
+    /// </summary>
+    public enum WeatherTypes :int {
+        ExtraSunny = 1,
+        Sunny = 2,
+        SunnyAndWindy = 3,
+        Cloudy = 4,
+        Raining = 5,
+        Drizzle = 6,
+        Foggy = 7,
+        Thunderstorm = 8,
+        ExtraSunny2 = 9,
+        SunnyAndWindy2 = 10
+    }
+
+    /// <summary>
     /// Blip types
     /// </summary>
     public enum Blips : int {
