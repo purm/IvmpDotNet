@@ -8,19 +8,21 @@
 //==============================================================================
 
 #include "CHttpClient.h"
+#include <SharedUtility.h>
 
-// OS Dependent Defines
-#ifndef _WIN32
+// OS Dependent
+#ifndef WIN32
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
 #define closesocket close
 #include <string.h>
+#include <stdio.h>
 #else
 #include <winsock2.h>
 #include <winsock.h>
 #endif
-#include "..\SharedUtility.h"
+
 // OS Independent Defines
 #define MAX_BUFFER 8192
 #define DEFAULT_PORT 80
@@ -38,8 +40,8 @@ CHttpClient::CHttpClient()
 	m_uiRequestTimeout(30000),
 	m_uiRequestStart(0),
 	m_pfnReceiveHandler(NULL),
-	m_pReceiveHandlerUserData(NULL)
-
+	m_pReceiveHandlerUserData(NULL),
+	m_file(NULL)
 {
 	// If windows startup winsock
 #ifdef WIN32
@@ -192,6 +194,7 @@ void CHttpClient::Reset()
 
 	// Set the status to none
 	m_status = HTTP_STATUS_NONE;
+	SetFile();
 }
 
 bool CHttpClient::Get(String strPath)
@@ -674,15 +677,14 @@ void CHttpClient::Process()
 					}
 
 					// Call the receive handler if we have one
-					bool bAppendData = true;
-
-					if(m_pfnReceiveHandler) {
-						bAppendData = m_pfnReceiveHandler(szBuffer + iSkipBytes, iBytesRecieved, m_pReceiveHandlerUserData);
+					if(m_pfnReceiveHandler)
+					{
+						if(m_pfnReceiveHandler(szBuffer + iSkipBytes, iBytesRecieved, m_pReceiveHandlerUserData))
+							m_strData.Append(szBuffer + iSkipBytes, iBytesRecieved);
 					}
-
-					// Append the buffer to the data if needed
-					if(bAppendData)
-						m_strData.Append(szBuffer + iSkipBytes, iBytesRecieved);
+					// Write response data to file if we have one set
+					else if(m_file != NULL)
+						fwrite(szBuffer + iSkipBytes, 1, iBytesRecieved, m_file);
 				}
 				else if(iBytesRecieved == 0)
 				{
