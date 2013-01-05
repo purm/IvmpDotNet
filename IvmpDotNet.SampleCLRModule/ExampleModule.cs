@@ -18,7 +18,7 @@ namespace IvmpDotNet.SampleCLRModule {
 
             if (e.Command[0] == "/asdf") {
                 e.Player.SendMessage("You entered valid message", 0, false);
-                e.Player.GiveWeapon(18, 1337);
+                e.Player.GiveWeapon(Weapons.DesertEagle, 1337);
             } else if (e.Command[0] == "/test") {
                 var obj = coreManager.ObjectManager.Create(2627789200, e.Player.Coordinates, new SDK.CVector3());
                 obj.AttachToPlayer(e.Player, new CVector3(), new SDK.CVector3(), -1);
@@ -28,7 +28,7 @@ namespace IvmpDotNet.SampleCLRModule {
         }
 
         void EventManager_PlayerSpawn(object sender, SDK.PlayerEventArgs e) {
-            e.Player.GiveWeapon(10, 1337);
+            e.Player.GiveWeapon(Weapons.M4, 1337);
             e.Player.GiveHelmet();
             e.Player.Money = 1337;
             e.Player.DisplayText(100, 100, "asdff", 60 * 1000);
