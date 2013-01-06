@@ -34,7 +34,7 @@ namespace IvmpDotNet.SDK {
         /// <summary>
         /// Gets the actor's model
         /// </summary>
-        int Model { get; }
+        PedModels Model { get; }
 
         /// <summary>
         /// Gets or sets the actor's name

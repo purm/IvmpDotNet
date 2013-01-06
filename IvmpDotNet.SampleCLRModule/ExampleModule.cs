@@ -42,7 +42,7 @@ namespace IvmpDotNet.SampleCLRModule {
 
             vehicles = new List<IVehicle>() {
                 coreManager.VehicleManager.Create(
-                    40,
+                    VehicleModels.Banshee,
                     new SDK.CVector3() {
                         X = 1657.118408f,
                         Y = 421.462982f,
@@ -55,11 +55,11 @@ namespace IvmpDotNet.SampleCLRModule {
                     },
                     0, 0, 0, 0, -1),
                 coreManager.VehicleManager.Create(
-                    17,
+                    VehicleModels.Burrito,
                     new SDK.CVector3() {
                         X = 1657.118408f,
                         Y = 421.462982f,
-                        Z = 128.569500f
+                        Z = 38.569500f
                     },
                     new SDK.CVector3() {
                         X = 359.828613f,

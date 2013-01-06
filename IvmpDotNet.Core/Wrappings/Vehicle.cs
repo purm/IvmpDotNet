@@ -69,8 +69,8 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public int Model {
-            get { return Vehicles.Vehicles_GetModel(this.VehicleId); }
+        public VehicleModels Model {
+            get { return (VehicleModels)Vehicles.Vehicles_GetModel(this.VehicleId); }
         }
 
         public int Health {

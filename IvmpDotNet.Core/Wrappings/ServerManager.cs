@@ -52,8 +52,8 @@ namespace IvmpDotNet.Wrappings {
             return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Server.Server_GetWeaponName((int)iWeaponId));
         }
 
-        public string GetVehicleName(int iModelId) {
-            return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Server.Server_GetVehicleName(iModelId));
+        public string GetVehicleName(VehicleModels iModelId) {
+            return System.Runtime.InteropServices.Marshal.PtrToStringAnsi(Server.Server_GetVehicleName((int)iModelId));
         }
 
         public void ToggleFrequentEvents(bool bToggle) {

@@ -100,12 +100,12 @@ namespace IvmpDotNet.Wrappings {
             set { Players.Players_ToggleAutoAim(PlayerId, value); }
         }
 
-        public int Model {
+        public IvmpDotNet.SDK.PedModels Model {
             get {
-                return Players.Players_GetModel(PlayerId);
+                return (IvmpDotNet.SDK.PedModels)Players.Players_GetModel(PlayerId);
             }
             set {
-                Players.Players_SetModel(PlayerId, value);
+                Players.Players_SetModel(PlayerId, (int)value);
             }
         }
 

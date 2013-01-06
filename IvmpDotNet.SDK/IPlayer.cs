@@ -89,7 +89,7 @@ namespace IvmpDotNet.SDK {
         /// <summary>
         /// Gets or sets the player's model
         /// </summary>
-        int Model { get; set; }
+        PedModels Model { get; set; }
 
         /// <summary>
         /// Toggles if the player is able to use his controls like mouse and keyboard

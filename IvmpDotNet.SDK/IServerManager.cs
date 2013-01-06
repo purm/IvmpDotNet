@@ -84,7 +84,7 @@ namespace IvmpDotNet.SDK {
         /// </summary>
         /// <param name="iModelId">the vehicle's model</param>
         /// <returns>the vehicles name</returns>
-        string GetVehicleName(Int32 iModelId);
+        string GetVehicleName(VehicleModels iModelId);
 
         /// <summary>
         /// toggles frequently event handling

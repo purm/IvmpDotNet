@@ -19,7 +19,7 @@ namespace IvmpDotNet.SDK {
         bool SirenState { get; set; }
         bool IsValid { get; }
         int[] Colors { get; set; }
-        int Model { get; }
+        VehicleModels Model { get; }
         int Health { get; set; }
         CVector3 Velocty { get; set; }
         CVector3 AngularVelocity { get; set; }

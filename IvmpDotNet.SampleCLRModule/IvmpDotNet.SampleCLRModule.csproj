@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ExampleModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ServerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IvmpDotNet.SDK\IvmpDotNet.SDK.csproj">

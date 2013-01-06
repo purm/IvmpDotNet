@@ -36,8 +36,8 @@ namespace IvmpDotNet.Wrappings {
             }
         }
 
-        public int Model {
-            get { return Actors.Actors_GetModel(ActorId); }
+        public PedModels Model {
+            get { return (PedModels)Actors.Actors_GetModel(ActorId); }
         }
 
         public string Name {

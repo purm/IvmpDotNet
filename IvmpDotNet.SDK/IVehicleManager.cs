@@ -23,7 +23,7 @@ namespace IvmpDotNet.SDK {
         /// <param name="color4">fourth color</param>
         /// <param name="respawn_delay">respawn delay (-1 for instant respawn)</param>
         /// <returns>The vehicle's object</returns>
-        IVehicle Create(Int32 iModelId, CVector3 vecPosition, CVector3 vecRotation, Int32 color1, Int32 color2, Int32 color3, Int32 color4, Int32 respawn_delay);
+        IVehicle Create(VehicleModels iModelId, CVector3 vecPosition, CVector3 vecRotation, Int32 color1, Int32 color2, Int32 color3, Int32 color4, Int32 respawn_delay);
 
         /// <summary>
         /// Removes a vehicle by its id

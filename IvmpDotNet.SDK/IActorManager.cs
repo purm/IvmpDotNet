@@ -18,7 +18,7 @@ namespace IvmpDotNet.SDK {
         /// <param name="vecPosition">The actor's position</param>
         /// <param name="fHeading">The actor's rotation (heading)</param>
         /// <returns>The created Actor</returns>
-        IActor Create(Int32 iModelId, CVector3 vecPosition, Single fHeading);
+        IActor Create(PedModels iModelId, CVector3 vecPosition, Single fHeading);
 
         #endregion
     }
